@@ -13,8 +13,8 @@ let pp = await conn.profilePictureUrl(m.sender, 'image')
 		"groupInviteMessage": {
 			"groupJid": "6285240750713-1610340626@g.us",
 			"inviteCode": "mememteeeekkeke",
-			"groupName": "P", 
-            "caption": "Hi Kak", 
+			"groupName": "Purple Ocean", 
+            "caption": "Welcome here.\nOnly girls allowed", 
             'jpegThumbnail': await ( await fetch(pp)).buffer()
 		}
 	}

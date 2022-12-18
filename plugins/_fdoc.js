@@ -10,7 +10,7 @@ const anu = {
                         },
        message: {
                     "documentMessage": {
-                    "title": 'elaina.jpeg', 
+                    "title": 'Ikratos.jpeg', 
                     "jpegThumbnail": fs.readFileSync('./thumbnail.jpg')
                           }
                         }

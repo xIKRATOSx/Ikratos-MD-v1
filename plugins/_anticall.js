@@ -2,6 +2,6 @@
 
 /* Made By FokusDotId (Fokus ID)
  * https://github.com/FokusDotId
- * Ingin bikin fitur tapi tidak bisa coding?
- * hubungi: https://wa.me/6281320170984
+ * Want to make features but can't code?
+ * get in touch: https://wa.me/6281320170984
 */

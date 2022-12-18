@@ -3,7 +3,7 @@ let handler = async (m, { conn, text }) => await conn.send3ButtonLoc(m.chat, awa
 *ʙʀᴏᴀᴅᴄᴀsᴛ ʜᴇʀᴇ*
 
 ${text}
-`.trim(), 'ᴇʟᴀɪɴᴀ ʙᴏᴛ💌', 'ᴍᴇɴᴜ🎀', '.menu', 'sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ?', '.sc', 'ᴅᴏɴᴀsɪ🧧', '.donasi', m)
+`.trim(), 'Ikratos Bot💌', 'ᴍᴇɴᴜ🎀', '.menu', 'sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ?', '.sc', m)
 handler.help = ['bchere <text>']
 handler.tags = ['owner']
 handler.command = ['bchere']

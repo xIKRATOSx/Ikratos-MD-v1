@@ -23,9 +23,9 @@ export async function before(m) {
 				let zippy = download['Zippy']
 				let templateButtons = [{ urlButton: { displayText: 'Source', url } }]
 				let quoted = await conn.sendMessage(m.chat, { image: { url: cover }, caption: `${txt}\n*• Download:*\n${list.join('\n')}`, footer: detailAnime.update, templateButtons })
-				if (/Movie/.test(detailAnime.episode)) return conn.reply(m.chat, 'Bot tidak dapat mengirim file video karena terlalu besar...', quoted)
+				if (/Movie/.test(detailAnime.episode)) return conn.reply(m.chat, 'The bot cannot send the video file because it is too big...', quoted)
 				let res = await downloadAnime(zippy?.['480p'] || zippy?.['720p'] || zippy?.['360p']).catch(() => null)
-				if (!res) return conn.reply(m.chat, 'Link download belum tersedia...', quoted)
+				if (!res) return conn.reply(m.chat, 'The download link is not yet available...', quoted)
 				await conn.sendMessage(m.chat, { document: { url: res?.download }, fileName: res?.filename, mimetype: res?.mimetype }, { quoted })
 			} catch (e) {
 				console.error(e)
@@ -101,7 +101,7 @@ async function getLatestAnime() {
 async function getDetailAnime(url) {
 	let html = (await axios.get(url)).data
 	let $ = cheerio.load(html), obj = {}
-	obj.title = $('div.pagetitle > h1').text().trim().replace(/Subtitle Indonesia/, '')
+	obj.title = $('div.pagetitle > h1').text().trim().replace(/Subtitle English/, '')
 	obj.episode = /Episode/.test(obj.title) ? obj.title.split(' Episode ')[1] : 'Movie'
 	obj.update = $('div.breadcrumb > span > time').attr('datetime')
 	$('div.contenttable > table > tbody > tr').each((idx, el) => {
