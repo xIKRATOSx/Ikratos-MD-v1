@@ -1,7 +1,3 @@
-// S C R I P T  O R I  B Y  Bochilgaming 🔭
-// Ditulis Ulang Oleh ImYanXiao
-// Credits, jangan dihapus atau diubah!
-
 // - - THANKS TO - -
 // • Allah SWT
 // • Nurutomo
@@ -15,8 +11,6 @@
 // • ImYanXiao
 // • Xtreshe (Beban)
 // • Dll
-
-//[!] Jangan Lupa Ganti Ownernya
 
 import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
@@ -46,12 +40,12 @@ let wibh = moment.tz('Asia/Karachi').format('HH')
     
 /*============== SOCIAL ==============*/
 
-// kalo ga punya ketik "-" atau biarin aja biar ada creditsnya :v
+// if you don't have it, type "-" or leave it alone so that there are credits :v
 global.sig = 'https://instagram.com/itx_ahmad.ali' //Link Instagrammu
 global.sgh = 'https://github.com/xIKRATOSx' //Link Githubmu
 global.sgc = 'https://chat.whatsapp.com/DxIb5oWzpg24mmg9D9zw5Y'
-global.sdc = '-' //Isi Pake Link Discordmu Kalo Gada Biarin aja
-global.snh = 'https://nhentai.net/g/HaramTod🗿' //Hmmm, Ini boleh kalian isi terserah :v
+global.sdc = '-' //Fill it out using the Discord link, if there is one, just leave it
+global.snh = 'https://nhentai.net/g/HaramTod🗿' //Hmmm, This is up to you to fill in :v
 
 /*============== PAYMENT ==============*/
 global.pdana = '085736178354' //Nomor Danamu
@@ -61,17 +55,17 @@ global.psaweria = 'https://saweria.com/XiaoYan021' //Link Saweriamu Kalo Nggada 
 /*============== NOMOR ==============*/
 global.nomorbot = '68673045381' //Nomor Bot
 global.nomorown = '923470027813' //Nomor Owner
-global.namebot = 'Ikratos Md' //Nama Bot
-global.nameown = 'ᴀʜᴍᴀᴅ ᴀʟ🇵🇰ɪ' // Nama Owner
+global.namebot = 'Ikratos-MD-v1' //Nama Bot
+global.nameown = 'ᴀʜᴍᴀᴅ ᴀʟɪ🇵🇰' // Nama Owner
 
 
 /*============== STAFF ==============*/
 global.owner = [
-  ['923470027813', 'ᴀʜᴍᴀᴅ ᴀʟɪ🎐', true] //Ganti jd nomormu sama Namamu
+  ['923470027813', 'ᴀʜᴍᴀᴅ ᴀʟɪ🎐', true] //Replace your number with your name
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
-global.prems = ['923470027813','68673045381','923191089077'] // Premium user bukan disini nambahinnya, ketik .addprem @user 10
+global.prems = ['923470027813','68673045381','923191089077'] // Premium user is not here to add it, type .addprem @ user 10
 
 
 global.lolkey = 'apikeymu'
@@ -96,7 +90,7 @@ global.APIKeys = { // APIKey Here
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://violetics.pw': 'beta'
 }
-// Kata APIKEY itu isi dengan apikey lu sendiri, dengan beli ke website itu
+// The word APIKEY is filled with your own apikey, by buying it on the website
 
 /*============== WATERMARK ==============*/
 global.wm = '                「 ɪᴋʀᴀᴛᴏs 𝙱𝙾𝚃 汉  」' //Main Watermark
@@ -106,14 +100,14 @@ global.botdate = `⫹⫺ Date: ${week} ${date}`
 global.bottime = `Time : ${wktuwib}`
 global.titlebot = '🎋 ┊ ɪᴋʀᴀᴛᴏs ʙᴏᴛ ᴡʜᴀᴛsᴀᴘᴘ'
 global.author = global.wm
-global.logo = 'https://i.ibb.co/cw886gK/b69bd948e975.jpg'
+global.logo = 'https://i.ibb.co/cc8jfkX/01.jpg'
 
 
 
 /*============== LOGO ==============*/
-global.thumb = 'https://i.ibb.co/cw886gK/b69bd948e975.jpg' //Main Thumbnail
+global.thumb = 'https://i.ibb.co/cc8jfkX/01.jpg' //Main Thumbnail
 global.thumb2 = 'https://i.ibb.co/cw886gK/b69bd948e975.jpg'
-global.thumbbc = 'https://i.ibb.co/cw886gK/b69bd948e975.jpg' //For broadcast
+global.thumbbc = 'https://i.ibb.co/cc8jfkX/01.jpg' //For broadcast
 global.giflogo = 'https://telegra.ph/file/a46ab7fa39338b1f54d5a.mp4'
 global.thumblvlup = 'https://i.ibb.co/cw886gK/b69bd948e975.jpg'
 global.hwaifu = ['https://i.pinimg.com/originals/ed/34/f8/ed34f88af161e6278993e1598c29a621.jpg',
@@ -341,7 +335,7 @@ global.dpdf = 'application/pdf'
 global.drtf = 'text/rtf'
 global.djson = 'application/json'
 
-global.thumbdoc = 'https://i.ibb.co/cw886gK/b69bd948e975.jpg'
+global.thumbdoc = 'https://i.ibb.co/cc8jfkX/01.jpg'
 
 /*=========== FAKE SIZE ===========*/
 global.fsizedoc = '99999999999999' // default 10TB
