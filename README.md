@@ -1,13 +1,13 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 <p align="center">
-    <img src="https://i.ibb.co/cw886gK/b69bd948e975.jpg" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
+    <img src="https://ibb.co/0CFXwHW" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 
 ## PENTING
 
 > **Warning**: Don't Trade This Script
 
-<h1 align="center">Ikrata-BOT - MD</h1>
+<h1 align="center">Ikrata-MD-v1</h1>
 <p align="center">
   <a href="https://github.com/xIKRATOSx"><img src="http://readme-typing-svg.herokuapp.com?color=FFFFFF&center=true&vCenter=true&multiline=false&lines=Ikratks+BOT+Multi+Device;Base+ori+by+Ahmad+Ali;Recode+By+Ikratos;Give+star+and+forks+this+Repo+:D;Follow+My+Github" alt="ʘᴗʘ">
 </p>
@@ -16,7 +16,7 @@
  <a href="#"><img title="IkratosBOT" src="https://img.shields.io/badge/Whatshapp BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/xIKRATOSx"><img title="Author" src="https://img.shields.io/badge/AUTHOR-ImAhmad+Ali-green.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/xIKRATOSx"><img title="Author" src="https://img.shields.io/badge/AUTHOR-xIKRATOSx-green.svg?style=for-the-badge&logo=github"></a>
 
 ---------
 
