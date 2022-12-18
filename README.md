@@ -1,6 +1,6 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 <p align="center">
-    <img src="https://ibb.co/YLNtFqq" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
+    <img src="https://ibb.co/N6NMDtn" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 
 ## PENTING
