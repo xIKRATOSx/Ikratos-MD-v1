@@ -8,9 +8,9 @@ let handler = async (m, { conn }) => {
 “Alloohu laa ilaaha illaa huwal hayyul qoyyuum, laa ta’khudzuhuu sinatuw walaa naum. Lahuu maa fissamaawaati wa maa fil ardli man dzal ladzii yasyfa’u ‘indahuu illaa biidznih, ya’lamu maa baina aidiihim wamaa kholfahum wa laa yuhiithuuna bisyai’im min ‘ilmihii illaa bimaa syaa’ wasi’a kursiyyuhus samaawaati wal ardlo walaa ya’uuduhuu hifdhuhumaa wahuwal ‘aliyyul ‘adhiim.”
 
 
-Artinya:
-Allah, tidak ada Tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafa'at di sisi Allah tanpa izin-Nya.
-Allah mengetahui apa-apa yang di hadapan mereka dan di belakang mereka, dan mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, dan Allah Maha Tinggi lagi Maha Besar." 
+It means:
+Allah, there is no God (who has the right to be worshiped) but He Who is eternally alive and continuously takes care of (His creatures); not sleepy and not sleeping. To Him belongs what is in the heavens and on earth. No one can intercede with Allah without His permission.
+Allah knows what is before them and behind them, and they know nothing from Allah's knowledge except what He wills. Allah's chair covers the heavens and the earth. And Allah does not find it hard to care for both of them, and Allah is Most High, Most Great."
 (QS. Al Baqarah: 255)
 `.trim()
   m.reply(caption)

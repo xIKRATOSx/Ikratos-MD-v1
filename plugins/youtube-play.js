@@ -3,33 +3,33 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `Use example ${usedPrefix}${command} naruto blue bird`
   await m.reply(wait)
   let vid = (await youtubeSearch(text)).video[0]
-  if (!vid) throw 'Tidak di temukan, coba untuk membalikkan judul dan author nya'
+  if (!vid) throw 'Not found, try to reverse the title and author'
   let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
   const url = 'https://www.youtube.com/watch?v=' + videoId
 
   let captvid = `╭──── 〔 Y O U T U B E 〕 ─⬣
-⬡ Judul: ${title}
-⬡ Durasi: ${durationH}
+⬡ Title: ${title}
+⬡ Duration: ${durationH}
 ⬡ Views: ${viewH}
 ⬡ Upload: ${publishedTime}
 ⬡ Link: ${vid.url}
 ╰────────⬣`
   conn.sendButton(m.chat, `╭──── 〔 Y O U T U B E 〕 ─⬣
-⬡ Judul: ${title}
-⬡ Durasi: ${durationH}
+⬡ Title: ${title}
+⬡ Duration: ${durationH}
 ⬡ Views: ${viewH}
 ⬡ Upload: ${publishedTime}
 ⬡ Link: ${vid.url}
-╰────────⬣`, author.trim(), await( await conn.getFile(thumbnail)).data, ['📽VIDEO', `${usedPrefix}getvid ${url} 360`], false, { quoted: m, 'document': { 'url':'https://wa.me/12522518391' },
+╰────────⬣`, author.trim(), await( await conn.getFile(thumbnail)).data, ['📽VIDEO', `${usedPrefix}getvid ${url} 360`], false, { quoted: m, 'document': { 'url':'https://wa.me/923470027813' },
 'mimetype': global.dpdf,
 'fileName': `𝕐𝕠𝕦𝕋𝕦𝕓𝕖 ℙ𝕝𝕒𝕪𝕤`,
 'fileLength': 666666666666666,
 'pageCount': 666,contextInfo: { externalAdReply: { showAdAttribution: true,
 mediaType:  2,
 mediaUrl: `${url}`,
-title: `AUDIO SEDANG DIKIRIM...`,
+title: `AUDIO IS BEING SENT...`,
 body: wm,
-sourceUrl: 'http://wa.me/12522518391', thumbnail: await ( await conn.getFile(thumbnail)).data
+sourceUrl: 'http://wa.me/923470027813', thumbnail: await ( await conn.getFile(thumbnail)).data
   }
  } 
 })

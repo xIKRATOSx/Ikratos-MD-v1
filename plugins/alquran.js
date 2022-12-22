@@ -1,7 +1,7 @@
 import { alquran } from '@bochilteam/scraper'
 let handler = async (m, { args, usedPrefix, command }) => {
-    if (!(args[0] || args[1])) throw `contoh:\n${usedPrefix + command} 1 2\n\nmaka hasilnya adalah surah Al-Fatihah ayat 2 beserta audionya, & ayatnya 1 saja`
-    if (isNaN(args[0]) || isNaN(args[1])) throw `contoh:\n${usedPrefix + command} 1 2\n\nmaka hasilnya adalah surah Al-Fatihah ayat 2 beserta audionya, dan ayatnya 1 aja`
+    if (!(args[0] || args[1])) throw `example:\n${usedPrefix + command} 1 2\n\nthen the result is sura Al-Fatihah verse 2 along with the audio, & only 1 verse`
+    if (isNaN(args[0]) || isNaN(args[1])) throw `example:\n${usedPrefix + command} 1 2\n\nthen the result is sura Al-Fatihah verse 2 along with the audio, just 1 verse`
     let api = await alquran()
     let mes = `
 ${api[args[0] - 1].ayahs[args[1] - 1].text.ar}

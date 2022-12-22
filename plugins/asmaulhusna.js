@@ -4,15 +4,15 @@ const contoh = `*ᴀsᴍᴀᴜʟ-ʜᴜsɴᴀ*
 // data here
 const anjuran = `
 
-Dari Abu hurarirah radhiallahu anhu, Rasulullah Saw bersabda: "إِنَّ لِلَّهِ تَعَالَى تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةٌ إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دخل الجنة، وهو وتر يُحِبُّ الْوِتْرَ"
-Artinya: "Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias seratus kurang satu. Barang siapa yang menghitung-hitungnya, niscaya masuk surga; Dia Witir dan menyukai yang witir".`
+From Abu hurarirah radhiallahu anhu, Rasulullah SAW said: "إِنَّ لِلَّهِ تَعَالَى تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةٌ إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دخل الجنة، وهو وتر يُحِبُّ الْوِتْرَ"
+Meaning: "Indeed, Allah has ninety-nine names, alias one hundred minus one. Whoever counts them, will surely enter heaven; He is Witir and loves the witir".`
 
 let handler = async (m, { args, usedPrefix, command }) => {
     let json = JSON.parse(JSON.stringify(global.asmaulhusna))
     let data = json.map((v, i) => `${i + 1}. ${v.latin}\n${v.arabic}\n${v.translation_id}`).join('\n\n')
-    if (isNaN(args[0])) throw `contoh:\n${usedPrefix + command} 1`
+    if (isNaN(args[0])) throw `example:\n${usedPrefix + command} 1`
     if (args[0]) {
-        if (args[0] < 1 || args[0] > 99) throw `minimal 1 & maksimal 99!`
+        if (args[0] < 1 || args[0] > 99) throw `minimum 1 & maximum 99!`
         let { index, latin, arabic, translation_id, translation_en } = json.find(v => v.index == args[0].replace(/[^0-9]/g, ''))
         return m.reply(`No. ${index}
 ${arabic}
@@ -33,63 +33,63 @@ global.asmaulhusna = [
         index: 1,
         latin: "Ar Rahman",
         arabic: "الرَّحْمَنُ",
-        translation_id: "Yang Memiliki Mutlak sifat Pemurah",
+        translation_id: "Who Has the Absolute of Gratitude",
         translation_en: "The All Beneficent"
     },
     {
         index: 2,
         latin: "Ar Rahiim",
         arabic: "الرَّحِيمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Penyayang",
+        translation_id: "Who Has Absolute Merciful nature",
         translation_en: "The Most Merciful"
     },
     {
         index: 3,
         latin: "Al Malik",
         arabic: "الْمَلِكُ",
-        translation_id: "Yang Memiliki Mutlak sifat Merajai/Memerintah",
+        translation_id: "Who Has the Absolute nature of Ruling / Ruling",
         translation_en: "The King, The Sovereign"
     },
     {
         index: 4,
         latin: "Al Quddus",
         arabic: "الْقُدُّوسُ",
-        translation_id: "Yang Memiliki Mutlak sifat Suci",
+        translation_id: "Who Has the Divine Absolute",
         translation_en: "The Most Holy"
     },
     {
         index: 5,
         latin: "As Salaam",
         arabic: "السَّلاَمُ",
-        translation_id: "Yang Memiliki Mutlak sifat Memberi Kesejahteraan",
+        translation_id: "Who Has the Absolute property of Giving Welfare",
         translation_en: "Peace and Blessing"
     },
     {
         index: 6,
         latin: "Al Mu’min",
         arabic: "الْمُؤْمِنُ",
-        translation_id: "Yang Memiliki Mutlak sifat Memberi Keamanan",
+        translation_id: "Who Has the Absolute property of Giving Security",
         translation_en: "The Guarantor"
     },
     {
         index: 7,
         latin: "Al Muhaimin",
         arabic: "الْمُهَيْمِنُ",
-        translation_id: "Yang Memiliki Mutlak sifat Pemelihara",
+        translation_id: "The Preserver Absolute",
         translation_en: "The Guardian, the Preserver"
     },
     {
         index: 8,
         latin: "Al ‘Aziiz",
         arabic: "الْعَزِيزُ",
-        translation_id: "Yang Memiliki Mutlak Kegagahan",
+        translation_id: "Who Has Absolute Valor",
         translation_en: "The Almighty, the Self Sufficient"
     },
     {
         index: 9,
         latin: "Al Jabbar",
         arabic: "الْجَبَّارُ",
-        translation_id: "Yang Memiliki Mutlak sifat Perkasa",
+        translation_id: "The Possessor of the Mighty Absolute",
         translation_en: "The Powerful, the Irresistible"
     },
     {

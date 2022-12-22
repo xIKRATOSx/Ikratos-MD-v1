@@ -5,12 +5,12 @@ export async function before(m) {
 	let mf = Object.values(this.menfess).find(v => v.status === false && v.penerima == m.sender)
 	if (!mf) return !0
 	console.log({ text: m.text, type: m.quoted?.mtype })
-	if ((m.text === 'BALAS PESAN' || m.text === '') && m.quoted.mtype == 'buttonsMessage') return m.reply("Silahkan kirim pesan balasan kamu.\nKetik pesan sesuatu lalu kirim, maka pesan otomatis masuk ke target balas pesan.");
+	if ((m.text === 'REPLY MESSAGE' || m.text === '') && m.quoted.mtype == 'buttonsMessage') return m.reply("Please send your reply message.\nType a message and then send it, then the message automatically goes to the message reply target.");
 	else {
 		let imgr = flaaa.getRandom()
-		let txt = `Hai kak @${mf.dari.split('@')[0]}, kamu menerima balasan nih.\n\nPesan yang kamu kirim sebelumnya:\n${mf.pesan}\n\nPesan balasannya:\n${m.text}\n`.trim();
-		await this.sendButton(mf.dari, bottime, txt, `${imgr + 'Menfess'}`, [['BALAS PESAN', '.balasmenfess']], null).then(() => {
-			m.reply('Berhasil Mengirim balasan.')
+		let txt = `Hai kaka @${mf.dari.split('@')[0]}, you received this reply.\n\nThe message you sent earlier:\n${mf.pesan}\n\nReply message:\n${m.text}\n`.trim();
+		await this.sendButton(mf.dari, bottime, txt, `${imgr + 'Menfess'}`, [['REPLY MESSAGE', '.balasmenfess']], null).then(() => {
+			m.reply('Successfully Sent reply.')
 			delay(1500)
 			delete this.menfess[mf.id]
 			return !0
@@ -20,6 +20,4 @@ export async function before(m) {
 }
 /* Made By FokusDotId (Fokus ID)
  * https://github.com/FokusDotId
- * Ingin bikin fitur tapi tidak bisa coding?
- * hubungi: https://wa.me/6281320170984
 */

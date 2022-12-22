@@ -6,7 +6,7 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
 
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  if (!args || !args[0]) throw 'Uhm... where\'s the url??'
   let chat = global.db.data.chats[m.chat]
   const isY = /y(es)/gi.test(args[1])
   const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
@@ -48,7 +48,7 @@ let name = await conn.getName(who)
     sourceUrl: args[0],
     thumbnailUrl: thumbnail,
     renderLargerThumbnail: true,
-    title: 'Nih Kak, ' + name,
+    title: 'Here sis, ' + name,
      }}
   })
 }

@@ -1,10 +1,10 @@
 import fetch from 'node-fetch'
 import cheerio from 'cheerio'
 let handler = async (m, { conn, text }) => {
-if (!text) throw `*Masukan Judul Anime Yang Ingin Kamu Cari !*`
+if (!text) throw `*Enter the Anime Title You Want to Find !*`
 let res = await fetch(global.API('https://api.jikan.moe', '/v3/search/anime', { q: text }))
 
-if (!res.ok) throw 'Tidak Ditemukan'
+if (!res.ok) throw 'Not found'
 let json = await res.json()
 
 	let { title, members, synopsis, episodes, url, rated, score, image_url, type, start_date, end_date, mal_id } = json.results[0]

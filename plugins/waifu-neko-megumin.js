@@ -12,7 +12,7 @@ case 'waifu':
     if (!res.ok) throw await res.text()
     let json = await res.json()
     if (!json.url) throw 'Error!'
-  conn.sendButton(m.chat, 'Istrinya Kartun🐧', author, json.url, [['waifu', `${usedPrefix}waifu`]], m)
+  conn.sendButton(m.chat, 'Cartoon wife🐧', author, json.url, [['waifu', `${usedPrefix}waifu`]], m)
 break
 
 case 'neko':
@@ -20,7 +20,7 @@ case 'neko':
   if (!_neko.ok) throw await _neko.text()
   let neko = await _neko.json()
   if (!neko.url) throw global.error
-  conn.sendButton(m.chat,  'Dasar Furry', wm, neko.url, [['Next','.neko']],m)
+  conn.sendButton(m.chat,  'You Furries', wm, neko.url, [['Next','.neko']],m)
 break 
 
 case 'megumin':
@@ -28,7 +28,7 @@ case 'megumin':
   if (!_megumin.ok) throw await _megumin.text()
   let megumin = await _megumin.json()
   if (!megumin.url) throw global.error
-  conn.sendButton(m.chat, 'Istrinya Kartun🐦', wm, megumin.url, [['Next','.megumin']],m)
+  conn.sendButton(m.chat, 'Cartoon wife🐦', wm, megumin.url, [['Next','.megumin']],m)
 break
 
 default:

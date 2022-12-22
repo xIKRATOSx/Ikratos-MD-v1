@@ -23,12 +23,12 @@ export async function all(m) {
     //Responder
     if (m.isGroup) {
       if (m.mentionedJid.includes(this.user.jid)) {
-        await this.sendButton(m.chat, isBanned ? "Grup Ini Diban Oleh owner" : banned ? "Anda telah dibanned" : "Bot Status: Online", author, null, [[isBanned ? 'Unban' : banned ? 'Pemilik Bot' : 'Menu',
+        await this.sendButton(m.chat, isBanned ? "This group is banned by the owner" : banned ? "Anda telah dibanned" : "Bot Status: Online", author, null, [[isBanned ? 'Unban' : banned ? 'Pemilik Bot' : 'Menu',
             isBanned ? '.unban' : banned ? '.owner' : '.menu'
                 ]], m)
       }
     }
-
+  }
 
 
 //Auto downloader
@@ -89,19 +89,19 @@ conn.sendFile(m.chat, result.video || result.video_original, "tiktok.mp4", `*Tik
 }
 
 function ucapan() {
-    const time = moment.tz('Asia/Jakarta').format('HH')
-    let res = "Selamat malam 🌙"
+    const time = moment.tz('Asia/Karachi').format('HH')
+    let res = "Good night 🌙"
     if (time >= 4) {
-        res = "Selamat pagi 🌄"
+        res = "Good morning 🌄"
     }
     if (time > 10) {
-        res = "Selamat siang ☀️"
+        res = "Good afternoon ☀️"
     }
     if (time >= 15) {
-        res = "Selamat sore 🌅"
+        res = "Good evening 🌅"
     }
     if (time >= 18) {
-        res = "Selamat malam 🌙"
+        res = "Good night 🌙"
     }
     return res
 }

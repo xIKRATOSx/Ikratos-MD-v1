@@ -2,9 +2,9 @@ export function before(m) {
     let user = global.db.data.users[m.sender]
     if (user.afk > -1) {
         conn.sendButtonDoc(m.chat,`
-  Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
+        You stop AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
   Selama ${(new Date - user.afk).toTimeString()}
-  `,wm,'Hai Kak','Ya',m,fakeig)
+  `,wm,'Hi bro','Yes',m,fakeig)
         user.afk = -1
         user.afkReason = ''
     }
@@ -18,10 +18,10 @@ export function before(m) {
             continue
         let reason = user.afkReason || ''
         conn.sendButtonDoc(m.chat,`
-  Jangan tag dia!
-  Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
-  Selama ${(new Date - afkTime).toTimeString()}
-  `,wm,'Maaf Kak','Ya',m,fakeig)
+        Don't tag him!
+        He's AFK ${reason ? 'dengan alasan ' + reason : 'no reason'}
+        During ${(new Date - afkTime).toTimeString()}
+  `,wm,'Sorry Sis','Yes',m,fakeig)
     }
     return true
 }

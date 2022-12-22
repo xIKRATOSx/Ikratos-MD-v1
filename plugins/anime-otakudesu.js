@@ -6,15 +6,15 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     let result = await otakudesu(text)
     let datathumb = await(await fetch(result.img)).buffer()
     let otaku = `
-💌 *JUDUL:* ${result.judul}
-🎌 *JEPANG:* ${result.jepang}
+💌 *TITLE:* ${result.judul}
+🎌 *JAPAN:* ${result.jepang}
 ⭐ *RATE:* ${result.rate}
-📚 *PRODUSER:* ${result.produser}
+📚 *PRODUCER:* ${result.produser}
 📌 *TIPE:* ${result.tipe}
 🎈 *STATUS:* ${result.status}
 🎐 *EPISODE:* ${result.episode}
-🪧 *DURASI:* ${result.durasi}
-📒 *RILIS:* ${result.rilis}
+🪧 *DURATION:* ${result.durasi}
+📒 *RELEASE:* ${result.rilis}
 📕 *STUDIO:* ${result.studio}
 📗 *GENRE:* ${result.genre}
 📔 *DESC:* ${result.desc}
