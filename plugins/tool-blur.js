@@ -12,7 +12,7 @@ let handler = async (m, { conn, text }) => {
 	let level = text || '5', img = await jimp.read(image)
 	img.blur(isNaN(level) ? 5 : parseInt(level))
 	img.getBuffer('image/jpeg', (err, buffer) => {
-		if (err) throw err?.message || `Tidak dapat memblur gambar`
+		if (err) throw err?.message || `Can\'t blur the picture`
 		m.reply(buffer)
 	})
 }

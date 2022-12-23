@@ -1,9 +1,9 @@
 import { webp2mp4 } from '../lib/webp2mp4.js'
 import { ffmpeg } from '../lib/converter.js'
 let handler = async (m, { conn, usedPrefix, command }) => {
-    if (!m.quoted) throw `Balas stiker/audio yang ingin diubah menjadi video dengan perintah ${usedPrefix + command}`
+    if (!m.quoted) throw `Reply to the sticker/audio that you want to turn into a video with the command ${usedPrefix + command}`
     let mime = m.quoted.mimetype || ''
-    if (!/webp|audio/.test(mime)) throw `Balas stiker/audio yang ingin diubah menjadi video dengan perintah ${usedPrefix + command}`
+    if (!/webp|audio/.test(mime)) throw `Reply to the sticker/audio that you want to turn into a video with the command ${usedPrefix + command}`
     let media = await m.quoted.download()
     let out = Buffer.alloc(0)
     if (/webp/.test(mime)) {

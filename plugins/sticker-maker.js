@@ -17,7 +17,7 @@ ${usedPrefix + command} wasted
 let q = m.quoted ? m.quoted : m
 let mime = (q.msg || q).mimetype || ''
 if (!mime) throw '✳️ Reply Gambar'
-if (!/image\/(jpe?g|png)/.test(mime)) throw `✳️ Format Tidak Didukung`
+if (!/image\/(jpe?g|png)/.test(mime)) throw `✳️ Unsupported Format`
 let img = await q.download()
 let url = await uploadImage(img)
 let apiUrl = global.API('https://some-random-api.ml/canvas/', encodeURIComponent(effect), {

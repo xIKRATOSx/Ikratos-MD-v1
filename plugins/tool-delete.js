@@ -1,5 +1,5 @@
 let handler = async (m, { conn, command }) => {
-if (!m.quoted) throw 'Reply pesan yang ingin dihapus'
+if (!m.quoted) throw 'Reply the message you want to delete'
 try {
 let bilek = m.message.extendedTextMessage.contextInfo.participant
 let banh = m.message.extendedTextMessage.contextInfo.stanzaId

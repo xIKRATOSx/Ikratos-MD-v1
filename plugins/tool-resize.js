@@ -17,7 +17,7 @@ if (!mime) throw "where the media?"
 
 let media = await q.download()
 let isMedia = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
-if (!isMedia) throw `Mime ${mime} tidak didukung`
+if (!isMedia) throw `Mime ${mime} is not supported`
 let link = await (isMedia ? uploadImage : uploadImage)(media)
 
 let source = await jimp.read(await link)

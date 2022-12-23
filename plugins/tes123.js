@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 
 let handler  = async (m, { conn, usedPrefix: _p }) => {
 
-let info = `Elaina Disini (｡>_<｡)`
+let info = `Ikratos is here (｡>_<｡)`
 
 
 

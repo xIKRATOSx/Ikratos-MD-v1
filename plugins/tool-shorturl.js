@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn, usedPrefix, args }) => {
 	let title = `— *S H O R T E D  U R L* —`
-    let caption = 'Silahkan Pilih Type Urlnya kak'
+    let caption = 'Please select the URL type, sis'
 const sections = [
    {
 	title: "TYPE URL",
@@ -23,8 +23,8 @@ const listMessage = {
   sections
 }
 
-if (!args[0]) return m.reply('Linknya mana?')
-if (!args[0].startsWith('https://')) throw 'Masukan Url Dengan Awalan *https://*'
+if (!args[0]) return m.reply('Where\'s the link?')
+if (!args[0].startsWith('https://')) throw 'Enter Url With Prefix *https://*'
 if (!args[1]) return conn.sendMessage(m.chat, listMessage, { quoted: m })
 
 let tesk = '🚀 *ʟɪɴᴋ:* '

@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, usedPrefix, args, command }) => {
 	let type = (args[1] || '').toLowerCase()
     let _type = (args[1] || '').toLowerCase()
-    if (!args[0]) return m.reply('Apikeynya mana?')
+    if (!args[0]) return m.reply('What\'s the point??')
   
   let cek = '「🔎」ᴍᴇɴᴄᴀʀɪ ᴀᴘɪᴋᴇʏ...'
 try {
@@ -15,10 +15,10 @@ try {
          let xteam = await (await fetch(`https://api.xteam.xyz/cekey?APIKEY=${args[0]}`)).json().catch(v => 'error')
          await m.reply(cek)
          if (xteam == 'error') {
-m.reply(`Maaf restapi ini sedang error, harap coba lagi nanti`)
+m.reply(`Sorry, this is still an error, please try again later`)
 } else { 
 if (xteam.response == "Only alphanumeric!") return m.reply('Only alphanumeric!')
- if (xteam.response == "Apikey tidak ditemukan, silahkan daftar atau beli ke developer untuk mendapatkan apikey yang valid!") return m.reply('ɪɴᴠᴀʟɪᴅ ᴀᴘɪᴋᴇʏ !')
+ if (xteam.response == "Apikey not found, please register or buy from the developer to get a valid apikey!") return m.reply('ɪɴᴠᴀʟɪᴅ ᴀᴘɪᴋᴇʏ !')
 conn.reply(m.chat, `• *ᴛʏᴘᴇ:* XTEAM
 • *ᴀᴘɪᴋᴇʏ:* ${args[0]}
 
