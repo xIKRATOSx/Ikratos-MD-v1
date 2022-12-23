@@ -4,10 +4,10 @@ import * as emoji from "emoji-api";
 
 let handler = async (m, { conn, args, usedPrefix, command, isPrems }) => {
   let er = `
- 🔗 Gunakan Perintah
-*${usedPrefix + command}* <tipe> <emoji>
+ 🔗 Use Commands
+*${usedPrefix + command}* <type> <emoji>
 
-📌 Contoh :
+📌 Example :
 *${usedPrefix + command}* fa 🐼
 
 ┌─⊷ *Type* 
@@ -25,7 +25,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isPrems }) => {
 ▢ tw = twitter
 └─────────────
 
-Kamu hanya bisa menggunakan 1 emoji, perhatikan spasi`
+You can only use 1 emoji, pay attention to the space`
   if (!args[0]) throw er
 
   let template = (args[0] || '').toLowerCase()
@@ -38,7 +38,7 @@ Kamu hanya bisa menggunakan 1 emoji, perhatikan spasi`
         case 'ap':
           emoji.get(`${args[1]}`)
             .then(async emoji => {
-              let stiker = await sticker(false, emoji.images[0].url, '𝙺𝚊𝚗𝚗𝚊┃ ᴮᴼᵀ', ' @Xiao_yan_21')
+              let stiker = await sticker(false, emoji.images[0].url, 'x_ikratos_x', ' Ahmad Ali')
               conn.sendFile(m.chat, stiker, null, { asSticker: true }, m)
             })
           break

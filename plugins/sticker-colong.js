@@ -8,8 +8,8 @@ try {
     let mime = (q.msg || q).mimetype || ''
     if (/image|video/.test(mime)) {
       let img = await q.download()
-      if (!img) throw 'Reply stiker nya!'
-      stiker = await sticker(img, false, '🍀', '🍭 • ᴇ ʟ ᴀ ɪ ɴ ᴀ ʙᴏᴛ :\n⤷ 𝚁𝚙𝚐 𝙱𝙾𝚃 𝚆𝚑𝚊𝚝𝚜𝚊𝚙𝚙')
+      if (!img) throw 'Reply to the sticker!'
+      stiker = await sticker(img, false, '🍀', '🍭 • Ikratos-MD-v1 :\n⤷ 𝚁𝚙𝚐 𝙱𝙾𝚃 𝚆𝚑𝚊𝚝𝚜𝚊𝚙𝚙')
     } else if (args[0]) stiker = await sticker(false, args[0], '🍀', '🎮 • Discord :\n⤷ https://discord.com')
   } finally {
     if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)

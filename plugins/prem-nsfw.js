@@ -1,5 +1,4 @@
 //~~~~ Don't Delete For Credit
-//~~~~ Made By ImYanXiao
 //~~~~ Special Thanks Kazuko & Reysekha For DATABASE
 //1) Kazuko: https://github.com/kazuko
 //2) Rey: https://github.com/inirey
@@ -85,49 +84,49 @@ let xapi = '?APIKEY=' + xkey
 
 let ahegao = false
 let anal = false
-let ass = true
-let blowjob = true
+let ass = false
+let blowjob = false
 let bsdm = false
 let cuckold = false
-let cums = true
+let cums = false
 let eba = false
-let ecchi = true
+let ecchi = false
 let ero = false
 let erofeet = false
 let erogirl = false
 let holoero = false
 let erokitsune = false
 let eroneko = false
-let eroyuri = true
-let feet = true
-let femdom = true
+let eroyuri = false
+let feet = false
+let femdom = false
 let foot = false
-let futanari = true
+let futanari = false
 let gangbang = false
-let girlsolo = true
+let girlsolo = false
 let glasses = false
-let hentai = true
+let hentai = false
 let holo = false
-let jahy = true
-let kitsune = true
-let kuni = true
-let loli = true
-let manga = true
+let jahy = false
+let kitsune = false
+let kuni = false
+let loli = false
+let manga = false
 let milf = false
 let mstrb = false
 let neko = false
 let panties = false
 let pussy = true
-let oppai = true
+let oppai = false
 let orgy = false
-let spank = true
+let spank = false
 let tentacles = false
 let thighs = false
 let tits = true
-let trap = true
-let waifu = true
-let yaoi = true
-let yuri = true
+let trap = false
+let waifu = false
+let yaoi = false
+let yuri = false
 let zettai = false
 
 //-------------------------------------
