@@ -20,24 +20,24 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     if (/msg/i.test(command)) fltr = split.filter(v => v.message.conversation)
     if (/img/i.test(command)) fltr = split.filter(v => v.message.imageMessage)
     let list = fltr.map(v => `├ ${v.nama} ${v.locked ? '(🔒)' : ''}`).join('\n')
-    if (list === '') throw 'gk ada'
+    if (list === '') throw 'no'
     if (global.db.data.chats[m.chat].getmsg) return await m.reply(`
-┌「 *daftar pesan* 」
+┌「 *message list* 」
 ${list}
 └────
 
-akses langsung dengan mengetik nama
+direct access by typing the name
 `.trim())
     else return await conn.sendButton(m.chat, `
-┌「 *ʟɪsᴛ ᴘᴇsᴀɴ* 」
+┌「 *order list* 」
 ${list}
 └────
 
-ᴀᴋsᴇs ᴅᴇɴɢᴀɴ:
-*${usedPrefix}get${which}* <nama>
+access with:
+*${usedPrefix}get${which}* <name>
 
-ᴀᴛᴀᴜ ʟᴀɴɢsᴜɴɢ ᴋᴇᴛɪᴋ ɴᴀᴍᴀɴʏᴀ, ᴛᴇᴛᴀᴘɪ ᴋᴀᴍᴜ ʜᴀʀᴜs ᴍᴇɴɢᴀᴋᴛɪғᴋᴀɴ ɢᴇᴛ ᴍᴇssᴀɢᴇ ᴅᴇɴɢᴀɴ ᴍᴇɴɢᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ
-`.trim(), wm, null, [['nyalakan getmsg', '.on getmsg']], m)
+or directly type his name, but you must activate get message by clicking the button below
+`.trim(), wm, null, [['turn on getmsg', '.on getmsg']], m)
 }
 handler.help = ['all', 'doc', 'vn', 'msg', 'video', 'gif', 'audio', 'img', 'sticker'].map(v => 'list' + v)
 handler.tags = ['database']

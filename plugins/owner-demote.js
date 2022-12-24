@@ -9,7 +9,7 @@ let handler = async (m, { conn, participants }) => {
 }
 handler.help = ['odemote @tag']
 handler.tags = ['group']
-handler.command = /^(odemote)$/i
+handler.command = /^(odemote|demote)$/i
 
 handler.owner = true
 handler.group = true

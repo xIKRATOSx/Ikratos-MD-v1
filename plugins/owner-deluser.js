@@ -11,11 +11,11 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 		var number = text
   }
 
-  if(!text && !m.quoted) return conn.reply(m.chat, `nomornya mana?\ncontoh: *${usedPrefix}${command} ${global.owner[0]}*\n@tag/reply user`, m)
+  if(!text && !m.quoted) return conn.reply(m.chat, `where is the number?\nexample: *${usedPrefix}${command} ${global.owner[0]}*\n@tag/reply user`, m)
   //let exists = await conn.isOnWhatsApp(number)
-  // if (exists) return conn.reply(m.chat, `*Nomor target tidak terdaftar di WhatsApp*`, m)
-  if(isNaN(number)) return conn.reply(m.chat, `Nomor yang kamu masukkan tidak valid!`, m)
-  if(number.length > 15) return conn.reply(m.chat, `Nomor yang kamu masukkan tidak valid!`, m)
+  // if (exists) return conn.reply(m.chat, `*The target number is not registered on WhatsApp*`, m)
+  if(isNaN(number)) return conn.reply(m.chat, `The number you entered is invalid!`, m)
+  if(number.length > 15) return conn.reply(m.chat, `The number you entered is invalid`, m)
   try {
 		if(text) {
 			var user = number + '@s.whatsapp.net'
@@ -32,7 +32,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 	let number = user.split('@')[0]
 	delete global.db.data.users[user]
         let pp = await conn.profilePictureUrl(number+'@s.whatsapp.net', 'image').catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
-        let anu = `☑️ Berhasil menghapus *${conn.getName(number + '@s.whatsapp.net')}* dari *DATABASE*`
+        let anu = `☑️ Successfully deleted *${conn.getName(number + '@s.whatsapp.net')}* from *DATABASE*`
  	conn.sendHydrated(m.chat, anu, wm, pp, null,null, number, '🌹 BYE USERS', [[null,null],[null,null],[null,null]], m, {mentions: [number+'@s.whatsapp.net']})
   }
 }
