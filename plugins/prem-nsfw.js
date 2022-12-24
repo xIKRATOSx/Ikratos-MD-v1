@@ -79,7 +79,7 @@ let xapi = '?APIKEY=' + xkey
 
 // > Example :
 // OPTIONS
-// • false = Free
+// • false = free
 // • true = premium
 
 let ahegao = false
@@ -134,7 +134,7 @@ let zettai = false
 //---------- TEXT -----------
 let next = 'ɴ ᴇ x ᴛ'
 let fot = botdate
-let txtprem = '❗ ɴsғᴡ ɪɴɪ ᴋʜᴜsᴜs ᴜsᴇʀ ᴘʀᴇᴍɪᴜᴍ\nʜᴀʀᴀᴘ ʜᴜʙᴜɴɢɪ ᴏᴡɴᴇʀ ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴇʟɪ ᴘʀᴇᴍɪᴜᴍ ! 📞'
+let txtprem = '❗ nsfw is specifically for premium users, please contact the owner to buy premium ! 📞'
 let p = '🅟 | '
 let f = 'Ⓕ | '
 

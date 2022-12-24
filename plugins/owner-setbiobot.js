@@ -1,10 +1,10 @@
 let handler = async (m, { conn, text }) => {
-   if (!text) throw `Masukan Text Untuk Bio Baru Bot`
+   if (!text) throw `Enter Text For Bot's New Bio`
      try {
 		await conn.updateProfileStatus(text).catch(_ => _)
-		conn.reply(m.chat, 'Sukses Mengganti Bio Bot', m)
+		conn.reply(m.chat, 'Success Changing Bio Bot', m)
 } catch {
-       throw 'Yah Error Kak...'
+       throw 'Well, Error Sis...'
      }
 }
 handler.help = ['setbotbio <teks>']
