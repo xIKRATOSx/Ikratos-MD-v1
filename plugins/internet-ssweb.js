@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, command, args }) => {
-   if (!args[0]) return conn.reply(m.chat, 'Masukkan Linknya Kak', m)
+   if (!args[0]) return conn.reply(m.chat, 'Enter the link Sis', m)
 
   await m.reply('_𝚃𝚞𝚗𝚐𝚐𝚞 𝚂𝚎𝚋𝚎𝚗𝚝𝚊𝚛⏰_')
   
