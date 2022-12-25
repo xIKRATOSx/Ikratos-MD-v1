@@ -20,20 +20,16 @@ const defaultMenu = {
 ┠─────═[ TODAY ]═─────⋆
 │╭────────────────···
 ┴│    *${ucapan()} %name!*
-⬡│☂︎ *Tanggal:* %week %weton
+⬡│☂︎ *Date:* %week %weton
 ⬡│☂︎ *Date:* %date
-⬡│☂︎ *Tanggal Islam:* %dateIslamic
-┬│☂︎ *Waktu:* %time
+⬡│☂︎ *Date Islamic:* %dateIslamic
+┬│☂︎ *Time:* %time
 │╰────────────────···
 ┠─────═[ INFO BOT ]═─────⋆
 │╭────────────────···
-┴│☂︎ *Nama Bot:* %me
+┴│☂︎ *Name Bot:* %me
 ⬡│☂︎ *Mode:* %mode
 ⬡│☂︎ *Prefix:* [ *%_p* ]
-⬡│☂︎ *Baileys:* Multi Device
-⬡│☂︎ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-⬡│☂︎ *Platform:* %platform
-⬡│☂︎ *Type:* Node.Js
 ⬡│☂︎ *Uptime:* %muptime
 ┬│☂︎ *Database:* %rtotalreg dari %totalreg
 │╰────────────────···
@@ -61,7 +57,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
   'rpg': 'RPG Games',
   'xp': 'Exp & Limit',
   'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
+  'kerang': 'Magic Shell',
   'quotes': 'Quotes',
   'fun': 'Fun',
   'anime': 'Anime',
@@ -204,7 +200,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
     //-----------TIME---------
     let ucpn = `${ucapan()}`
     let d = new Date(new Date + 3600000)
-    let locale = 'id'
+    let locale = 'en'
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
@@ -253,32 +249,32 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
    {
 	title: `${htki} ᴍᴀɪɴ ${htka}`,
 	rows: [
-	    {title: `⚡ ${pmenus} 𝚂𝙿𝙴𝙴𝙳 𝙱𝙾𝚃`, rowId: ".ping", description: "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙺𝚎𝚌𝚎𝚙𝚊𝚝𝚊𝚗 𝚁𝚎𝚜𝚙𝚘𝚗 𝙱𝙾𝚃"},
-	    {title: `⏰ ${pmenus} 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 𝙱𝙾𝚃`, rowId: ".runtime", description: "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝚆𝚊𝚔𝚝𝚞 𝙱𝙾𝚃 𝙱𝚎𝚛𝚓𝚊𝚕𝚊𝚗"}, 
-	    {title: `💌 ${pmenus} 𝙾𝚆𝙽𝙴𝚁 𝙱𝙾𝚃`, rowId: ".creator", description: "𝙼𝚎𝚗𝚊𝚖𝚙𝚒𝚕𝚔𝚊𝚗 𝙸𝚗𝚏𝚘𝚛𝚖𝚊𝚜𝚒 𝚃𝚎𝚗𝚝𝚊𝚗𝚐 𝙾𝚠𝚗𝚎𝚛"},
+	    {title: `⚡ ${pmenus} 𝚂𝙿𝙴𝙴𝙳 𝙱𝙾𝚃`, rowId: ".ping", description: "display bot response speed"},
+	    {title: `⏰ ${pmenus} 𝚁𝚄𝙽𝚃𝙸𝙼𝙴 𝙱𝙾𝚃`, rowId: ".runtime", description: "display bot running time"}, 
+	    {title: `💌 ${pmenus} 𝙾𝚆𝙽𝙴𝚁 𝙱𝙾𝚃`, rowId: ".creator", description: "display info of bot owner"},
 	    {title: `📔 ${pmenus} 𝚂𝙲𝚁𝙸𝙿𝚃 𝙱𝙾𝚃`, rowId: ".sc", description: `𝚂𝚘𝚞𝚛𝚌𝚎 𝙲𝚘𝚍𝚎 ${namebot}`},
 	]
     },{
 	title: `${htki} sᴜᴘᴘᴏʀᴛ ${htka}`,
 	rows: [
-	    {title: `💹 ${pmenus} 𝙳𝙾𝙽𝙰𝚃𝙴`, rowId: ".donasi", description: '𝚂𝚞𝚙𝚙𝚘𝚛𝚝 𝙾𝚠𝚗𝚎𝚛 𝙰𝚐𝚊𝚛 𝙻𝚎𝚋𝚒𝚑 𝚂𝚎𝚖𝚊𝚗𝚐𝚊𝚝'},
+	    {title: `💹 ${pmenus} 𝙳𝙾𝙽𝙰𝚃𝙴`, rowId: ".donasi", description: 'support the owner to be more enthusiastic'},
 	]
 	},{
 	title: `${htki} ᴍᴇɴᴜ ${htka}`,
 	rows: [
-	    {title: `💬 ${pmenus} All`, rowId: ".? all", description: "Menampilkan Semua command BOT"},
+	    {title: `💬 ${pmenus} All`, rowId: ".? all", description: "Showing all BOT commands"},
 	    {title: `🌱 ${pmenus} Rpg`, rowId: ".? rpg", description: "Game Epic Rpg!"},
-	{title: `✨ ${pmenus} Exp`, rowId: ".? xp", description: "Ayo tingkatkan pangkat mu!"},
-	{title: `🎮 ${pmenus} Game`, rowId: ".? game", description: "Gamenya seru seru lho (๑˃̵　ᴗ　˂̵)"},
-	{title: `🧩 ${pmenus} Fun`, rowId: ".? fun", description: "Fitur yang aman untuk keluarga"},
-	{title: `🐚 ${pmenus} Kerang`, rowId: ".? kerangajaib", description: "Tanyakan pada ketua club"},
-	{title: `📑 ${pmenus} Quotes`, rowId: ".? quotes", description: "Random Inspirasi"},
+	{title: `✨ ${pmenus} Exp`, rowId: ".? xp", description: "Let's increase your rank!"},
+	{title: `🎮 ${pmenus} Game`, rowId: ".? game", description: "The game is fun (๑˃̵　ᴗ　˂̵)"},
+	{title: `🧩 ${pmenus} Fun`, rowId: ".? fun", description: "Safe features for families"},
+	{title: `🐚 ${pmenus} Kerang`, rowId: ".? kerangajaib", description: "Ask the club leader"},
+	{title: `📑 ${pmenus} Quotes`, rowId: ".? quotes", description: "Random Inspiration"},
 	{title: `⛩️ ${pmenus} Anime`, rowId: ".? anime", description: "Wibu wibu🐦"},
-	{title: `🔞 ${pmenus} Nsfw`, rowId: ".? nsfw", description: "Tch, dasar sagnean"},
-	{title: `🌟 ${pmenus} Premium`, rowId: ".? premium", description: "Untuk user premium"},
-	{title: `🎭 ${pmenus} Anonymous Chats`, rowId: ".? anonymous", description: "Bicara dengan orang tidak dikenal"},
-	{title: `📖 ${pmenus} Al-Quran`, rowId: ".? quran", description: "Tobat yuk kak"},
-	{title: `🌎 ${pmenus} Internet`, rowId: ".? internet", description: "Cari sesuatu diBOT"},
+	{title: `🔞 ${pmenus} Nsfw`, rowId: ".? nsfw", description: "Tch, sagnean policy"},
+	{title: `🌟 ${pmenus} Premium`, rowId: ".? premium", description: "For premium users"},
+	{title: `🎭 ${pmenus} Anonymous Chats`, rowId: ".? anonymous", description: "Talk to strangers"},
+	{title: `📖 ${pmenus} Al-Quran`, rowId: ".? quran", description: "Let\'s repent sister"},
+	{title: `🌎 ${pmenus} Internet`, rowId: ".? internet", description: "Search for something on BOT"},
 	{title: `📩 ${pmenus} Downloaders`, rowId: ".? downloader", description: "Download sesuatu dari BOT"},
 	{title: `🎨 ${pmenus} Stikers`, rowId: ".? stiker", description: "Buat Sticker diBOT"},
 	{title: `✏️ ${pmenus} Nulis`, rowId: ".? nulis", description: "Nulis kok males kak?"},
