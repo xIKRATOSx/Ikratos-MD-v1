@@ -275,17 +275,17 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
 	{title: `🎭 ${pmenus} Anonymous Chats`, rowId: ".? anonymous", description: "Talk to strangers"},
 	{title: `📖 ${pmenus} Al-Quran`, rowId: ".? quran", description: "Let\'s repent sister"},
 	{title: `🌎 ${pmenus} Internet`, rowId: ".? internet", description: "Search for something on BOT"},
-	{title: `📩 ${pmenus} Downloaders`, rowId: ".? downloader", description: "Download sesuatu dari BOT"},
-	{title: `🎨 ${pmenus} Stikers`, rowId: ".? stiker", description: "Buat Sticker diBOT"},
-	{title: `✏️ ${pmenus} Nulis`, rowId: ".? nulis", description: "Nulis kok males kak?"},
-	{title: `🎧 ${pmenus} Audio`, rowId: ".? audio", description: "Ubah Audio dengan Filter"},
+	{title: `📩 ${pmenus} Downloaders`, rowId: ".? downloader", description: "Download something from the BOT"},
+	{title: `🎨 ${pmenus} Stikers`, rowId: ".? stiker", description: "Create Stickers in BOT"},
+	{title: `✏️ ${pmenus} Nulis`, rowId: ".? nulis", description: "Why are you lazy to write?"},
+	{title: `🎧 ${pmenus} Audio`, rowId: ".? audio", description: "Change Audio with Filters"},
 	{title: `🏢 ${pmenus} Group`, rowId: ".? group", description: "Only Groups"},
 	{title: `👑 ${pmenus} Admin`, rowId: ".? admin", description: "Only Admin Group"},
-	{title: `🗂️ ${pmenus} Database`, rowId: ".? database", description: "Simpan sesuatu diBOT"},
-	{title: `🛠️ ${pmenus} Tools`, rowId: ".? tools", description: "Mungkin tools ini bisa membantu?"},
+	{title: `🗂️ ${pmenus} Database`, rowId: ".? database", description: "Save something on BOT"},
+	{title: `🛠️ ${pmenus} Tools`, rowId: ".? tools", description: "Maybe this tool can help?"},
 	{title: `ℹ️ ${pmenus} Info`, rowId: ".? info", description: "Info info BOT"},
 	{title: `👩‍💻 ${pmenus} Owner`, rowId: ".? owner", description: "Owner Only!"},
-	{title: `❓ ${pmenus} No Category`, rowId: ".? nocategory", description: "Fitur tanpa kategory!"},
+	{title: `❓ ${pmenus} No Category`, rowId: ".? nocategory", description: "Uncategorized features!"},
 	]
   },
 ]
@@ -294,26 +294,25 @@ let tek = `✧────···[ Dashboard ]···────✧
 *${ucapan()} ${conn.getName(m.sender)}*
 ╭━━━━━━━━━━━━━━━━┈─✧
 ┴
-│⬡ Aktif selama ${mpt}
-│⬡ Baterai ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
+│⬡ Active for ${mpt}
 │⬡ Prefix : [ ${_p} ]
-│⬡ *${Object.keys(global.db.data.users).length}* Pengguna
-│⬡ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
-│⬡ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
+│⬡ *${Object.keys(global.db.data.users).length}* User
+│⬡ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Banned chat
+│⬡ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* User Banned
 ┬
 ├━━━━━━━━━━━━━━━━┈─⋆
-│ ▸ *ᴀᴜᴛʜᴏʀ :* ʙᴏᴄʜɪʟɢᴀᴍɪɴɢ
-┴ ▸ *ᴏᴡɴᴇʀ :* ɪᴍ-ʏᴀɴxɪᴀᴏ
+│ ▸ *ᴀᴜᴛʜᴏʀ :* Ahmad Ali
+┴ ▸ *ᴏᴡɴᴇʀ :* xIKRATOSx
 ✧
 ┬ 📌 𝗣𝗶𝗻𝗻𝗲𝗱 :
-│ ʙᴇʀɪ ᴊᴇᴅᴀ ʏᴀʜ ᴋᴀᴋ ^ω^
+│ Give me a break, SIS ^ω^
 ╰━━━━━━━━━━━━━━━━┈─◂`
 const listMessage = {
   text: tek,
   footer: wm2,
   mentions: await conn.parseMention(tek),
   title: ``,
-  buttonText: `Klik Disini ⎙`, 
+  buttonText: `Click Here ⎙`, 
   sections
 }
   if (teks == '404') {
@@ -321,12 +320,12 @@ const listMessage = {
     }
 
  /**************************** TIME *********************/
- let wib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-    let wibh = moment.tz('Asia/Jakarta').format('HH')
-    let wibm = moment.tz('Asia/Jakarta').format('mm')
-    let wibs = moment.tz('Asia/Jakarta').format('ss')
-    let wit = moment.tz('Asia/Jayapura').format('HH:mm:ss')
-    let wita = moment.tz('Asia/Makassar').format('HH:mm:ss')
+ let wib = moment.tz('Asia/Karachi').format('HH:mm:ss')
+    let wibh = moment.tz('Asia/Karachi').format('HH')
+    let wibm = moment.tz('Asia/Karachi').format('mm')
+    let wibs = moment.tz('Asia/Karachi').format('ss')
+    let wit = moment.tz('Asia/Karachi').format('HH:mm:ss')
+    let wita = moment.tz('Asia/Karachi').format('HH:mm:ss')
     let wktuwib = `${wibh} H ${wibm} M ${wibs} S`
  
  let mode = global.opts['self'] ? 'Private' : 'Publik'
@@ -449,7 +448,7 @@ const listMessage = {
     itemCount : 2022,
     status: 1,
     surface : 1,
-    message: `Hai Kak ${name}!`, 
+    message: `Hai Sis ${name}!`, 
     orderTitle: `▮Menu ▸`,
     thumbnail: await (await fetch(flaaa + 'Menu')).buffer(), //Gambarnye
     sellerJid: '0@s.whatsapp.net' 
@@ -467,14 +466,14 @@ const listMessage = {
     itemCount : 2022,
     status: 1,
     surface : 1,
-    message: '[❗] Memuat Menu ' + teks + '...\n Sabar Ya Kak ^ω^', 
+    message: '[❗] Loading Menu ' + teks + '...\n Be patient Sis ^ω^', 
     orderTitle: `▮Menu ▸`,
     thumbnail: await (await fetch(flaaa + 'Loading')).buffer(), //Gambarnye
     sellerJid: '0@s.whatsapp.net' 
     }
     }
     }
-    conn.reply(m.chat, '*Tunggu Sebentar Kak. . .*', ftrol) 
+    conn.reply(m.chat, '*Wait a minute Sis. . .*', ftrol) 
     
     //------------------< MENU >----------------
     
@@ -553,12 +552,6 @@ const listMessage = {
                         id: '.ping'
                     }
                 },
-                {
-                    quickReplyButton: {
-                        displayText: 'Donasi💵',
-                        id: '.donasi'
-                    }
-                },
             ]
         }
        //await conn.sendMessage(m.chat, message, m, { mentionedJid: [m.sender] })
@@ -607,7 +600,7 @@ const listMessage = {
       ['⚡ sᴘᴇᴇᴅᴛᴇsᴛ', `${_p}speedtest`]
     ], m, {asLocation: true}))*/
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Sorry, the menu is in error', m)
     throw e
   }
 }
@@ -645,25 +638,25 @@ function clockStringP(ms) {
   return [ye, ' *Years 🗓️*\n',  mo, ' *Month 🌙*\n', d, ' *Days ☀️*\n', h, ' *Hours 🕐*\n', m, ' *Minute ⏰*\n', s, ' *Second ⏱️*'].map(v => v.toString().padStart(2, 0)).join('')
 }
 function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  let res = "Kok Belum Tidur Kak? 🥱"
+  const time = moment.tz('Asia/Karachi').format('HH')
+  let res = "Why haven\'t you slept yet?? 🥱"
   if (time >= 4) {
-    res = "Pagi Lord 🌄"
+    res = "Morning 🌄"
   }
   if (time >= 10) {
-    res = "Siang Lord ☀️"
+    res = "Day ☀️"
   }
   if (time >= 15) {
-    res = "Sore Lord 🌇"
+    res = "Afternoon 🌇"
   }
   if (time >= 18) {
-    res = "Malam Lord 🌙"
+    res = "night 🌙"
   }
   return res
 }
 function timeimg() {
     let imgloc = ''
-  const time = moment.tz('Asia/Jakarta').format('HH')
+  const time = moment.tz('Asia/Karachi').format('HH')
   imgloc = ('./media/elaina8.png')
   if (time >= 0) {
     imgloc = ('./media/elaina.png')
