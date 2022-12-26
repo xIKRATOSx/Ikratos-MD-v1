@@ -2,7 +2,7 @@ import cp from 'child_process'
 import { promisify } from 'util'
 let exec = promisify(cp.exec).bind(cp)
 let handler = async (m) => {
-	await conn.reply(m.chat, "ᴛᴜɴɢɢᴜ sᴇʙᴇɴᴛᴀʀ", m)
+	await conn.reply(m.chat, "wait a minute", m)
     let o
     try {
         o = await exec('df -h')

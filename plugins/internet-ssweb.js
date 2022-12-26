@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, command, args }) => {
    if (!args[0]) return conn.reply(m.chat, 'Enter the link Sis', m)
 
-  await m.reply('_𝚃𝚞𝚗𝚐𝚐𝚞 𝚂𝚎𝚋𝚎𝚗𝚝𝚊𝚛⏰_')
+  await m.reply('_wait a minute⏰_')
   
    let img = await (await fetch(`https://botcahx.ddns.net/api/tools/ssweb?link=${args[0]}`)).buffer()
 

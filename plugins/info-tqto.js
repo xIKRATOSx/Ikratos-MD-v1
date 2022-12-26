@@ -53,16 +53,11 @@ https://github.com/Rlxfly
 https://github.com/Aiinne
 *❉ Papah-Chan:*
 https://github.com/FahriAdison
-*▸ - - - —「 Penulis Ulang 」— - - - ◂*
 *❉ ImYanXiao:*
 https://github.com/ImYanXiao
-*▸ - - - —「 Thanks For Help Me 」— - - - ◂*
-*❉ Kannachan:*
-*❉ The.sadboy.01:*
-*❉ Papah-Chan:*
-*❉ Johannes:*
-*❉ Krisna:*
-*❉ Rlxfly:*
+*▸ - - - —「 Repeat Writer 」— - - - ◂*
+*❉ xIKRATOSx:*
+https://github.com/xIKRATOSx
 
 `
 conn.sendButtonDoc(m.chat, tqto, wm,'Thanks','Bilek', m, { contextInfo: { externalAdReply: { showAdAttribution: true,

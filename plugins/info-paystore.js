@@ -1,6 +1,6 @@
 let handler = async (m, { conn }) => {
 	//-----PRICE
-//sewa
+//rent
 let sh = '5'
 let sn = '15'
 let ss = '30'
@@ -13,38 +13,38 @@ let pp = '40'
 let pv = '50'
 let ppm = '70'
 let info = `
-╭━━━━「 *SEWA* 」
-┊⫹⫺ *Hemat:* _${sh}k/grup (1 minggu)_
-┊⫹⫺ *Normal:* _${sn}k/grup (1 bulan)_
-┊⫹⫺ *Standar:* _${ss}k/grup (2 bulan)_
-┊⫹⫺ *Pro:* _${sp}k/grup (4 bulan)_                                                      
-┊⫹⫺ *Vip:* = _${sv}k/grup (12 bulan)_
+╭━━━━「 *RENT* 」
+┊⫹⫺ *Save:* _${sh}k/group (1 week)_
+┊⫹⫺ *Normal:* _${sn}k/group (1 month)_
+┊⫹⫺ *Standar:* _${ss}k/group (2 month)_
+┊⫹⫺ *Pro:* _${sp}k/group (4 month)_                                                      
+┊⫹⫺ *Vip:* = _${sv}k/group (12 month)_
 ╰═┅═━––––––๑
 
 ╭━━━━「 *PREMIUM* 」
-┊⫹⫺ *Hemat:* _${ph}k (1 minggu)_
-┊⫹⫺ *Normal:* _${pn}k (1 bulan)_
-┊⫹⫺ *Pro:* _${pp}k (4 bulan)_
-┊⫹⫺ *Vip:* _${pv}k (8 bulan)_                                               
+┊⫹⫺ *Save:* _${ph}k (1 week)_
+┊⫹⫺ *Normal:* _${pn}k (1 month)_
+┊⫹⫺ *Pro:* _${pp}k (4 month)_
+┊⫹⫺ *Vip:* _${pv}k (8 month)_                                               
 ┊⫹⫺ *Permanent:* = _${ppm}k (Unlimited)_
 ╰═┅═━––––––๑
 
 *⫹⫺ PAYMENT:*
-• *Pulsa:* [${ppulsa}]
+• *Pulse:* [${ppulsa}]
 • *Dana:* [${pdana}]
 
-–––––– *🐾 Kebijakan* ––––––
-🗣️: Kak, Kok harganya mahal banget?
-💬: Mau tawar menawar? boleh, silahkan chat owner aja
+–––––– *🐾 Policy* ––––––
+🗣️: Sis, why is it so expensive?
+💬: Want to bargain? ok, please just chat with the owner
 
-🗣️: Scam ga nih kak?
-💬: Enggalah, Owner 100% Tepati janji #STAYHALAL
+🗣️: Is this a scam?
+💬: Don't, Owner 100% Keep the promise #STAYHALAL
 
 ▌│█║▌║▌║║▌║▌║█│▌
 `
 const sections = [
    {
-	title: `${htjava} SEWA ✦-------`,
+	title: `${htjava} RENT ✦-------`,
 	rows: [
 	    {title: "🔖 𝗛𝗘𝗠𝗔𝗧", rowId: '.order *Paket:* HEMAT • Sewa', description: '𝗣𝗿𝗶𝗰𝗲: ' + sh + 'k (1 minggu)' },
 	    {title: "🔖 𝗡𝗢𝗥𝗠𝗔𝗟", rowId: '.order *Paket:* NORMAL • Sewa', description: '𝗣𝗿𝗶𝗰𝗲: ' + sn + 'k (1 bulan)' },

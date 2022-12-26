@@ -6,25 +6,25 @@ export async function before(m) {
         return !0
     this.susunkata = this.susunkata ? this.susunkata : {}
     if (!(id in this.susunkata))
-        return conn.sendButton(m.chat, 'Soal itu telah berakhir', author, null, buttonsusunkata, m)
+        return conn.sendButton(m.chat, 'The matter is over', author, null, buttonsusunkata, m)
     if (m.quoted.id == this.susunkata[id][0].id) {
         let isSurrender = /^((me)?nyerah|surr?ender)$/i.test(m.text)
         if (isSurrender) {
             clearTimeout(this.susunkata[id][3])
             delete this.susunkata[id]
-            return conn.sendButton(m.chat, '*Yah Menyerah :( !*', author, null, buttonsusunkata, m)
+            return conn.sendButton(m.chat, '*Well Surrender :( !*', author, null, buttonsusunkata, m)
         }
         let json = JSON.parse(JSON.stringify(this.susunkata[id][1]))
         // m.reply(JSON.stringify(json, null, '\t'))
         if (m.text.toLowerCase() == json.jawaban.toLowerCase().trim()) {
             global.db.data.users[m.sender].exp += this.susunkata[id][2]
-            conn.sendButton(m.chat, `*Benar!*\n+${this.susunkata[id][2]} XP`, author, null, buttonsusunkata, m)
+            conn.sendButton(m.chat, `*True!*\n+${this.susunkata[id][2]} XP`, author, null, buttonsusunkata, m)
             clearTimeout(this.susunkata[id][3])
             delete this.susunkata[id]
         } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold)
-            m.reply(`*Dikit Lagi!*`)
+            m.reply(`*A little more!*`)
         else
-            conn.sendButton(m.chat, `*Salah!*`, author, null, [
+            conn.sendButton(m.chat, `*Wrong!*`, author, null, [
                 ['Hint', '/suka'],
                 ['Nyerah', 'menyerah']
             ], m)

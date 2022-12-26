@@ -2,11 +2,11 @@ import TicTacToe from '../lib/tictactoe.js'
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     conn.game = conn.game ? conn.game : {}
-    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
+    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'You are still in the game'
     let room = Object.values(conn.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
     // m.reply('[WIP Feature]')
     if (room) {
-        m.reply('Partner ditemukan!')
+        m.reply('Partner found!')
         room.o = m.chat
         room.game.playerO = m.sender
         room.state = 'PLAYING'
@@ -30,13 +30,13 @@ Room ID: ${room.id}
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
-Menunggu @${room.game.currentTurn.split('@')[0]}
-Ketik *nyerah* untuk nyerah
+Waiting @${room.game.currentTurn.split('@')[0]}
+Tap *give up* to give up
 `.trim()
-        if (room.x !== room.o) await conn.sendButton(room.x, str, author, ['Nyerah', 'nyerah'], m, {
+        if (room.x !== room.o) await conn.sendButton(room.x, str, author, ['Give up', 'hand over'], m, {
             mentions: conn.parseMention(str)
         })
-        await conn.sendButton(room.o, str, author, ['Nyerah', 'nyerah'], m, {
+        await conn.sendButton(room.o, str, author, ['Give up', 'hand over'], m, {
             mentions: conn.parseMention(str)
         })
     } else {
@@ -48,7 +48,7 @@ Ketik *nyerah* untuk nyerah
             state: 'WAITING'
         }
         if (text) room.name = text
-        m.reply('Menunggu partner' + (text ? ` mengetik command dibawah ini
+        m.reply('Waiting for a partner' + (text ? ` type the command below
 ${usedPrefix}${command} ${text}` : ''))
         conn.game[room.id] = room
     }

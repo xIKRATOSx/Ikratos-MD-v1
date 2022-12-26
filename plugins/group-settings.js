@@ -7,7 +7,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }[(args[0] || '')]
     if (isClose === undefined)
         throw `
-*Format salah! Contoh :*
+*Incorrect format! Example :*
   *○ ${usedPrefix + command} close*
   *○ ${usedPrefix + command} open*
   *○ ${usedPrefix + command} unlock*

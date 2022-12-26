@@ -12,7 +12,7 @@ export async function before(m) {
         let index = room.jawaban.indexOf(text)
         if (index < 0) {
             if (Math.max(...room.jawaban.filter((_, index) => !room.terjawab[index]).map(jawaban => similarity(jawaban, text))) >= threshold)
-                m.reply('Dikit lagi!')
+                m.reply('A little more!')
             return !0
         }
         if (room.terjawab[index])
@@ -23,15 +23,15 @@ export async function before(m) {
     }
     let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
     let caption = `
-*Soal:* ${room.soal}
-Terdapat *${room.jawaban.length}* jawaban${room.jawaban.find(v => v.includes(' ')) ? `
-(beberapa jawaban terdapat spasi)
+*Question:* ${room.soal}
+Be found *${room.jawaban.length}* answer${room.jawaban.find(v => v.includes(' ')) ? `
+(some answers have spaces)
 ` : ''}
-${isWin ? `*SEMUA JAWABAN TERJAWAB*` : isSurrender ? '*MENYERAH!*' : ''}
+${isWin ? `*ALL ANSWERS ANSWERED*` : isSurrender ? '*SURRENDER!*' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
         return isSurrender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
     }).filter(v => v).join('\n')}
-${isSurrender ? '' : `+${room.winScore} XP tiap jawaban benar`}
+${isSurrender ? '' : `+${room.winScore} XP for every correct answer`}
     `.trim()
     const msg = await this.sendButton(m.chat, caption, author, null, [[`${(isWin || isSurrender) ? 'Family 100' : 'Nyerah'}`, `${(isWin || isSurrender) ? '.family100' : 'nyerah'}`]], null, {
         mentions: this.parseMention(caption)

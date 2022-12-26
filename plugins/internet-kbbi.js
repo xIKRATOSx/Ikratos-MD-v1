@@ -11,8 +11,8 @@ ${v.means.map(v => '- ' + v).join('\n`')}
 `).join('\n').trim()}
 
 Note:
-p = Partikel: kelas kata yang meliputi kata depan, kata sambung, kata seru, kata sandang, ucapan salam
-n = Nomina: kata benda
+p = Particle: word class that includes prepositions, conjunctions, interjections, prepositions, greetings
+n = Noun: noun
 `.trim())
 }
 handler.help = ['kbbi <teks>']

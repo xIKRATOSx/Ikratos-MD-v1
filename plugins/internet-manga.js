@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
-  if (!text) throw `Masukkan query!`
+  if (!text) throw `Enter the query!`
   let res = await fetch(global.API('https://api.jikan.moe', '/v3/search/manga', { q: text }))
   if (!res.ok) throw await res.text()
   let json = await res.json()

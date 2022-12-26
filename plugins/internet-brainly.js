@@ -9,8 +9,8 @@ let handler = async (m, { conn, text }) => {
 	console.log(res)
 	if (res) {
 		let answer = res.map(({ question, answers }, i) => `
-*Pertanyaan*${question.grade ? ` (${question.grade})` : ''}\n${question.content}${answers.map((v, i) => `
-*Jawaban Ke ${i + 1}*${v.verification ? ' (Verified)' : ''}${v.isBest ? ' (Best)' : ''}
+*Query*${question.grade ? ` (${question.grade})` : ''}\n${question.content}${answers.map((v, i) => `
+*Answer to ${i + 1}*${v.verification ? ' (Verified)' : ''}${v.isBest ? ' (Best)' : ''}
 ${v.content}${v.attachments.length > 0 ? `\n*Media Url*: ${v.attachments.join(', ')}` : ''}`).join``}`).join('\n' + '-'.repeat(45))
 		m.reply(answer.trim())
 	} else {
