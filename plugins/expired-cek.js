@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-	if (db.data.chats[m.chat].expired < 1) throw `Group Ini Tidak DiSet Expired !`
+	if (db.data.chats[m.chat].expired < 1) throw `This group is not set to expire !`
     let who
     if (m.isGroup) who = args[1] ? args[1] : m.chat
     else who = args[1]

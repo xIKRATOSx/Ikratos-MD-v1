@@ -57,14 +57,14 @@ const listMessage = {
 }
 
   let user = global.db.data.users[m.sender]
-  if (user.registered === true) throw `[💬] Kamu sudah terdaftar\nMau daftar ulang? *${usedPrefix}unreg <SERIAL NUMBER>*`
+  if (user.registered === true) throw `[💬] You are already registered\nWant to register again? *${usedPrefix}unreg <SERIAL NUMBER>*`
   if (!Reg.test(text)) return conn.sendMessage(m.chat, listMessage, { quoted: m })
   let [_, name, splitter, age] = text.match(Reg)
-  if (!name) throw 'Nama tidak boleh kosong (Alphanumeric)'
-  if (!age) throw 'Umur tidak boleh kosong (Angka)'
+  if (!name) throw 'Name cannot be empty (Alphanumeric)'
+  if (!age) throw 'Age cannot be empty (Number)'
   age = parseInt(age)
-  if (age > 30) throw 'WOI TUA (。-`ω´-)'
-  if (age < 9) throw 'Halah dasar bocil'
+  if (age > 30) throw 'OLD WOW (。-`ω´-)'
+  if (age < 9) throw 'Badass policy'
   user.name = name.trim()
   user.age = age
   user.regTime = + new Date
@@ -79,7 +79,7 @@ const listMessage = {
 │▸ *sɴ:* ${sn}
 ┗────···
 
-ᴅᴀᴛᴀ ᴜsᴇʀ ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ ᴅɪᴅᴀᴛᴀʙᴀsᴇ ʙᴏᴛ, ᴅɪᴊᴀᴍɪɴ ᴀᴍᴀɴ ᴛᴀɴᴘᴀ ᴛᴇʀsʜᴀʀᴇ (. ❛ ᴗ ❛.)
+User data stored in the bot database is guaranteed to be safe without being shared (. ❛ ᴗ ❛.)
 `
   let buttonMessage= {
 'document':{'url':sgc},

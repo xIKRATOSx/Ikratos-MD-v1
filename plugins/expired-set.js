@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0] || isNaN(args[0])) throw `Masukkan angka mewakili jumlah hari !\n*Misal : ${usedPrefix + command} 30*`
+    if (!args[0] || isNaN(args[0])) throw `Enter a number representing the number of days !\n*Eg : ${usedPrefix + command} 30*`
 
     let who
     if (m.isGroup) who = args[1] ? args[1] : m.chat
@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     var now = new Date() * 1
     if (now < global.db.data.chats[who].expired) global.db.data.chats[who].expired = jumlahHari
     else global.db.data.chats[who].expired = now + jumlahHari
-    conn.reply(m.chat, `Berhasil menetapkan hari kadaluarsa untuk Grup ini selama ${args[0]} hari.\n\nHitung Mundur : ${msToDate(global.db.data.chats[who].expired - now)}`, m)
+    conn.reply(m.chat, `Successfully set the expiration date for this Group for ${args[0]} day.\n\nCountdown : ${msToDate(global.db.data.chats[who].expired - now)}`, m)
 }
 handler.help = ['setexpired <hari>']
 handler.tags = ['owner']
@@ -28,6 +28,6 @@ function msToDate(ms) {
     let minutes = Math.floor((hoursms) / (60 * 1000));
     let minutesms = ms % (60 * 1000);
     let sec = Math.floor((minutesms) / (1000));
-    return days + " hari " + hours + " jam " + minutes + " menit";
+    return days + " day " + hours + " hour " + minutes + " minute";
     // +minutes+":"+sec;
 }

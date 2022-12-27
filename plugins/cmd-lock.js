@@ -1,5 +1,5 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!m.quoted) throw 'Tag Pesan!'
+    if (!m.quoted) throw 'Tag Message!'
     if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
     let sticker = db.data.sticker
     let hash = m.quoted.fileSha256.toString('hex')

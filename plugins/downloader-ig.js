@@ -8,6 +8,6 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 handler.help = ['ig'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
-handler.command = /^(ig(dl)?)$/i
+handler.command = /^(insta|ig(dl)?)$/i
 
 export default handler
