@@ -33,14 +33,11 @@ let qu = args[1] || '360'
     catch (e) { }
 
 // Kocak
-const yt = await youtubedlv2(v).catch(async _ => await youtubedl(v)).catch(async _ => await youtubedlv3(v))
-const dl_url = await yt.video[q].download()
-  const ttl = await yt.title
-const size = await yt.video[q].fileSizeH
-  
- await m.reply(wait)
-  await conn.sendMessage(m.chat, { [/^(?:-|--)doc$/i.test(args[1]) || null ? 'document' : 'video']: { url: dl_url }, fileName: `${author}.mp4`, mimetype: 'video/mp4', ..._thumb }, { quoted: trol })
-}
+const yt = await youtubedl(v). catch(async _ => await youtubedlv2(v)). catch(async _ => await youtubedlv3(v))
+const dl_url = await yt. Video[q]. Download()
+const ttl = await yt. title
+const size = await yt. Video[q]. fileSizeH
+Await Await  Conn. sendMessage(m. chat, { video: { url: dl_url }, fileName: '${ttl}.mp4', mimetype: 'video/mp4', caption: '▢ TITLE: ${  ttl  }\n▢ VIDEO WEIGHT: ${size }', thumbnail: await fetch(yt. thumbnail) }, { quoted: m })
 
 handler.command = /^(getvid|ytmp4|ytv)$/i
 handler.limit = true
