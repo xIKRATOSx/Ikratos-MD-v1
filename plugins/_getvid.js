@@ -2,7 +2,7 @@ import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
 import fetch from 'node-fetch'
 let handler = async (m, { conn, args }) => {
 if (!args[0]) throw '*Insert command again with youtube video link*'
-await m.reply(`*_⏳Please wait your video is in process...⏳_*\n\n*◉If video isn't sent by bot try these commands #playdoc ᴏ #play.2 ᴏ #ytmp4doc ◉*`)
+await m.reply(`*_⏳Please wait your video is in process...⏳_*\n\n*◉If video isn\'t sent by bot try these commands #playdoc ᴏ #play.2 ᴏ #ytmp4doc ◉*`)
 try {
 let qu = args[1] || '360'
 let q = qu + 'p'
