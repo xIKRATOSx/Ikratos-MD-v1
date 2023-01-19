@@ -1,25 +1,23 @@
 import { youtubeSearch } from '@bochilteam/scraper'
-let handler = async (m, { text }) => {
-if (!text) throw '*What are you looking for?*\n*Where is the link?*'
-const { video, channel } = await youtubeSearch(text)
-let teks = [...video, ...channel].map(v => {
-switch (v.type) {
-case 'video': return `
-📌 *${v.title}* (${v.url})
-⌚ Duration: ${v.durationH}
-⏲️ Published ${v.publishedTime}
-👁️ ${v.view} views
-`.trim()
-case 'channel': return `
-📌 *${v.channelName}* (${v.url})
-🧑‍🤝‍🧑 _${v.subscriberH} subscribers_
-🎥 ${v.videoCount} 𝚟𝚒𝚍𝚎𝚘𝚜
-`.trim()
+
+let handler = async(m, { conn, usedPrefix, text, args, command }) => {
+let name = await conn.getName(m.sender)
+
+  if (!text) throw `Where is the text?\nExample; *${usedPrefix + command}* arcade`
+  let cari = await youtubeSearch(`${text}`)
+    let dapet = cari.video
+    let listSections = []
+	Object.values(dapet).map((v, index) => {
+	listSections.push([index + ' ' + cmenub + ' ' + v.title, [
+          ['Video🎧', usedPrefix + 'ytmp4 ' + v.url , '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n👁️ *Views:* ' + v.view + '\n📎 *Url:* ' + v.url],
+          ['Audio 🎧', usedPrefix + 'ytmp3 ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n👁️ *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
+        ]])
+	})
+	return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Silahkan pilih type di bawah...\n*Teks yang anda minta:* ${text}\n\nKetik ulang *${usedPrefix + command}* teks anda untuk mengubah teks lagi`, author, `YouTube Search 🔎`, listSections, m)
 }
-}).filter(v => v).join('\n\n========================\n\n')
-m.reply(teks)
-}
-handler.help = ['', 'earch'].map(v => 'yts' + v + ' <pencarian>')
-handler.tags = ['tools']
+handler.help = ['ytsearch <query>']
+handler.tags = ['internet']
 handler.command = /^yts(earch)?$/i
+
+
 export default handler
