@@ -215,9 +215,9 @@ conn.sendButton(m.chat, 'Hello world!', '@BochilGaming', 'https://github.com/Boc
 
 ---------
 
-###BASE BOT OWNER:
+<h1 align="center">Base Owner</h1>
 
 <a href="https://github.com/ImYanXiao"><img src="https://github.com/ImYanXiao.png" width="200" height="200" alt="ImYanXiao"/></a>
 
-###RECODED & TRANSLATED BY:
+<h1 align="center">Ikratos-MD-v1</h1>
 <a href="https://github.com/xIKRATOSx"><img src="https://github.com/xIKRATOSx.png" width="300" height="300" alt="xIKRATOSx"/></a>
