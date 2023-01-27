@@ -9,7 +9,7 @@
 
 <h1 align="center">Ikratos-MD-v1</h1>
 <p align="center">
-  <a href="https://github.com/xIKRATOSx"><img src="http://readme-typing-svg.herokuapp.com?color=FFFFFF&center=true&vCenter=true&multiline=false&lines=Ikratks+BOT+Multi+Device;Base+ori+by+Ahmad+Ali;Recode+By+Ikratos;Give+star+and+forks+this+Repo+:D;Follow+My+Github" alt="ʘᴗʘ">
+  <a href="https://github.com/xIKRATOSx"><img src="http://readme-typing-svg.herokuapp.com?color=FFFFFF&center=true&vCenter=true&multiline=false&lines=Ikratks+BOT+Multi+Device;Base+ori+by+ImYanXiao;Recode+By+Ikratos;Give+star+and+forks+this+Repo+:D;Follow+My+Github" alt="ʘᴗʘ">
 </p>
 
 <p align="center">
