@@ -214,3 +214,10 @@ conn.sendButton(m.chat, 'Hello world!', '@BochilGaming', 'https://github.com/Boc
 4. If you have problem chat me in owner number
 
 ---------
+
+###BASE BOT OWNER:
+
+<a href="https://github.com/ImYanXiao"><img src="https://github.com/ImYanXiao.png" width="200" height="200" alt="ImYanXiao"/></a>
+
+###RECODED & TRANSLATED BY:
+<a href="https://github.com/xIKRATOSx"><img src="https://github.com/xIKRATOSx.png" width="300" height="300" alt="xIKRATOSx"/></a>
