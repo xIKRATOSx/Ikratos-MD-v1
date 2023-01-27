@@ -219,5 +219,5 @@ conn.sendButton(m.chat, 'Hello world!', '@BochilGaming', 'https://github.com/Boc
 
 <a href="https://github.com/ImYanXiao"><img src="https://github.com/ImYanXiao.png" width="200" height="200" alt="ImYanXiao"/></a>
 
-<h1 align="center">Ikratos-MD-v1</h1>
+<h1 align="center">RECODED BY</h1>
 <a href="https://github.com/xIKRATOSx"><img src="https://github.com/xIKRATOSx.png" width="300" height="300" alt="xIKRATOSx"/></a>
