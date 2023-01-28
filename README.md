@@ -223,3 +223,10 @@ conn.sendButton(m.chat, 'Hello world!', '@BochilGaming', 'https://github.com/Boc
 <p align="center">
 <a href="https://github.com/xIKRATOSx"><img src="https://github.com/xIKRATOSx.png" width="300" height="300" alt="xIKRATOSx"/></a>
 </p>
+
+----------
+
+<h1 align="center">THANKS TO</h1>
+<p align="center">
+<a href="https://github.com/BlackAmda"><img src="https://github.com/BlackAmda.png" width="300" height="300" alt="BlackAmda"/></a>
+</p>
