@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 let handler = async(m, { conn, text, usedPrefix, command }) => {
 let pp = await conn.profilePictureUrl(m.chat).catch(_ => null)
 
-let str = `*https://github.com/xIKRATOSx/Ikratos-MD-v1*`
+let str = `*Contact Owner:\n*wa.me/923470027813?text=Assalam+o+alaikum*`
     let waifu = await fetch('https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/anime/waifu.txt')
     let chen = await waifu.text()
     let ran = chen.split('\n')
