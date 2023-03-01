@@ -79,7 +79,8 @@ global.APIs = { // API Prefix
   lol: 'https://api.lolhuman.xyz',
   ana: 'https://anabotofc.herokuapp.com/',
   adiisus: 'https://adiixyzapi.herokuapp.com',
-  violetics : 'https://violetics.pw', 
+  violetics : 'https://violetics.pw',
+  zenz: 'https://zenzapi.xyz',
   males : 'https://malesin.xyz'
 }
 global.APIKeys = { // APIKey Here
@@ -88,6 +89,7 @@ global.APIKeys = { // APIKey Here
   'https://anabotofc.herokuapp.com/': 'AnaBot',
   'https://api.lolhuman.xyz': 'Apikeymu',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
+  'https://zenzapi.xyz': '01ABEB1E11',
   'https://violetics.pw': 'beta'
 }
 // The word APIKEY is filled with your own apikey, by buying it on the website
