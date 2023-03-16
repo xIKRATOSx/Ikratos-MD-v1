@@ -38,21 +38,26 @@
 - ✔️ | **Multi Device** 
 - ✔️ | **Button Document(Experiment)** 
 ---------
-### Some of the features include
-- ✔️ | Menfess
-- ✔️ | AntiCall
-- ✔️ | Game & Rpg Game
-- ✔️ | Nsfw 
-- ✔️ | Sticker 
-- ✔️ | Kerang Ajaib 
-- ✔️ | Quotes
-- ✔️ | Anime 
-- ✔️ | Premium 
-- ✔️ | Tools 
----------
 
 ## ``Group Panelku Hosting``
 [![WHATSAPP](https://img.shields.io/badge/Groups%20Panel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/DxIb5oWzpg24mmg9D9zw5Y) 
+---------
+
+## ```HEROKU DEPLOYMENT```
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/xIKRATOSx/Ikratos-MD-v1)
+---------
+
+## ```STEPS TO DEPLOY ON HEROKU```
+
+- 1. Fork this repo (Don't forget to give a star)
+- 2. ***Get [SESSION-ID](https://replit.com/@xIKRATOSx/session-creator?output%20only=1&lite=1#thumbnail.jpg) by scanning QR code. `Whatapp>Three dots>Linked Devices`***
+- 3. Upload your session file in "session" folder
+- 4. Simply click Deploy to heroku button above
+
+## ```QR SCAN```
+[![Run on Repl.it](https://repl.it/badge/github/xIKRATOSx/Ikratos-MD-v1)](https://replit.com/@xIKRATOSx/session-creator?output%20only=1&lite=1#thumbnail.jpg)
+<img src="https://fontmeme.com/permalink/220116/0c42dc0b64931810388ba399da55e927.png" alt="backwoods-logo-font" border="0"></a>  
 ---------
 
 ## ```USER RAILWAY```
@@ -140,46 +145,6 @@ npm update
 ```bash
 node .
 ```
-
----------
-
-## ```Arguments node . [--options] [<session name>]```
-
-## `--self`
-* activate self mode (ignores other)
-
-## `--pconly`
-* If that chat not from private bot, bot will ignore
-
-## `--gconly`
-* If that chat not from group, bot will ignore
-
-## `--swonly`
-* If that chat not from status, bot will ignore
-
-## `--prefix <prefixes>`
-* `prefixes` are seperated by each character
-Set prefix
-
-## `--server`
-* Used for [heroku](https://heroku.com/) or scan through website
-
-## `--restrict`
-* Enables restricted plugins (which can lead your number to be **banned** if used too often)
-* Group Administration `add, kick`
-
-## `--img`
-* Enable image inspector through terminal
-
-## `--autoread`
-* If enabled, all incoming messages will be marked as read
-
-## `--nyimak`
-* No bot, just print received messages and add users to database
-
-## `--test`
-* **Development** Testing Mode
-
 ---------
 
 ## ```How To Customise Message Display```
