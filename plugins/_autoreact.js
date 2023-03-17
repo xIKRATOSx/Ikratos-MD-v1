@@ -1,4 +1,6 @@
-let handler = async (m, { conn, text }) => {
+//Remove (/*  */) to use this plugin
+
+/*let handler = async (m, { conn, text }) => {
 
     conn.sendMessage(m.chat, {
           react: {
@@ -15,3 +17,4 @@ export default handler
   function pickRandom(list) {
      return list[Math.floor(Math.random() * list.length)]
   }
+*/
