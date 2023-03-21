@@ -1,4 +1,43 @@
-import fetch from 'node-fetch'
+
+import fg from 'api-dylux' 
+import { tiktokdl, tiktokdlv2, tiktokdlv3 } from '@bochilteam/scraper'
+
+let handler = async (m, { conn, text, args, usedPrefix, command}) => {
+if (!args[0]) throw `✳Enter a Tiktok link\n\n Example : ${usedPrefix + command} https://vm.tiktok.com/ZMNqyusVD/?k=1`
+if (!args[0].match(/tiktok/gi)) throw `verify that the link is from tiktok`
+
+try {
+    let p = await fg.tiktok(args[0]) 
+    let te = `
+┌─⊷ TIKTOK
+▢ *Username:* ${p.author}
+▢ *Descripción:* ${p.title}
+└───────────`
+    conn.sendButton(m.chat, te, igfg, p.nowm, [['⎘ Stalkig', `${usedPrefix}ttstalk ${p.author.replace(/^@/, '')}`], ['♫ Audio', `${usedPrefix}tomp3`]], m)
+    } catch {  	
+	const { author: { nickname }, video, description } = await tiktokdl(args[0])
+         .catch(async _ => await tiktokdlv2(args[0]))
+         .catch(async _ => await tiktokdlv3(args[0]))
+    const url = video.no_watermark2 || video.no_watermark || 'https://tikcdn.net' + video.no_watermark_raw || video.no_watermark_hd
+    if (!url) throw 'Error downloading the video'
+    conn.sendButton(m.chat, `
+┌─⊷ TIKTOK
+▢ *Nickname:* ${nickname} ${description ? `\n▢ *Description:* ${description}` : ''}
+└───────────`, igfg, url, [['♫ Audio', `${usedPrefix}tomp3`]], m)
+} 
+    
+}  
+handler.help = ['tiktok']
+handler.tags = ['downloader']
+handler.command = /^(tiktok|ttdl|tiktokdl|tiktoknowm)$/i
+handler.diamond = true
+
+export default handler
+
+
+
+
+/*import fetch from 'node-fetch'
 import { generateWAMessageFromContent } from '@adiwajshing/baileys'
 import { tiktokdl, tiktokdlv2 } from '@bochilteam/scraper'
 let handler = async (m, { conn, text, usedPrefix, command, args }) => {
@@ -36,4 +75,4 @@ let id = url.split('?')[0].split('/')
 let res = await (await fetch(`https://www.tiktok.com/node/share/video/${id[3]}/${id[5]}/`)).json()
 return res?.seoProps?.metaParams}
 async function shortUrl(url) {
-return await (await fetch(`https://tinyurl.com/api-create.php?url=${url}`)).text()}
+return await (await fetch(`https://tinyurl.com/api-create.php?url=${url}`)).text()}*/
