@@ -1,62 +1,25 @@
-let limit = 80
+import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
 import fetch from 'node-fetch'
-import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper';
-let handler = async (m, { conn, args, isPrems, isOwner }) => {
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
-let name = await conn.getName(who)
-
-  if (!args || !args[0]) throw 'Uhm... where\'s the url??'
-  let chat = global.db.data.chats[m.chat]
-  const isY = /y(es)/gi.test(args[1])
-  const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
-  const limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
-  let audio, source, res, link, lastError, isLimit
-  for (let i in _audio) {
-    try {
-      audio = _audio[i]
-      isLimit = limitedSize < audio.fileSize
-      if (isLimit) continue
-      link = await audio.download()
-      if (link) res = await fetch(link)
-      isLimit = res?.headers.get('content-length') && parseInt(res.headers.get('content-length')) < limitedSize
-      if (isLimit) continue
-      if (res) source = await res.arrayBuffer()
-      if (source instanceof ArrayBuffer) break
-    } catch (e) {
-      audio = link = source = null
-      lastError = e
-    }
-  }
-  if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw 'Error: ' + (lastError || 'Can\'t download audio')
-  if (!isY && !isLimit) await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
-*${htki} YOUTUBE ${htka}*
-
-*${htjava} Title:* ${title}
-*${htjava} Type:* mp3
-*${htjava} Filesize:* ${audio.fileSizeH}
-
-*L O A D I N G. . .*
-`.trim(), m)
-  if (!isLimit) await conn.sendFile(m.chat, source, title + '.mp3', '', fakes, null, { fileLength: fsizedoc, seconds: fsizedoc, mimetype: 'audio/mp4', contextInfo: {
-          externalAdReply :{
-    body: 'Size: ' + audio.fileSizeH,
-    containsAutoReply: true,
-    mediaType: 2, 
-    mediaUrl: args[0],
-    showAdAttribution: true,
-    sourceUrl: args[0],
-    thumbnailUrl: thumbnail,
-    renderLargerThumbnail: true,
-    title: 'Here sis, ' + name,
-     }}
-  })
-}
-handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> <without message>`)
-handler.tags = ['downloader']
+let handler = async (m, { conn, args }) => {
+if (!args[0]) throw '*ENTRE THE LINK OF A YOUTUBE VIDEO*'
+await m.reply(`*Wait Downloading Your Audio 🔄*`)
+try {
+let q = '128kbps'
+let v = args[0]
+const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v)).catch(async _ => await youtubedlv3(v))
+const dl_url = await yt.audio[q].download()
+const ttl = await yt.title
+const size = await yt.audio[q].fileSizeH
+await conn.sendFile(m.chat, dl_url, ttl + '.mp3', null, m, false, { mimetype: 'audio/mp4' })
+} catch {
+try {
+let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=85faf717d0545d14074659ad&url=${args[0]}`)    
+let lolh = await lolhuman.json()
+let n = lolh.result.title || 'error'
+await m.reply(`*Wait Uploading Your Audio 🔃*`)
+await conn.sendFile(m.chat, lolh.result.link, `${n}.mp3`, null, m, false, { mimetype: 'audio/mp4' })    
+} catch {
+await conn.reply(m.chat, '*404 ERROR UPLOADING SERVERS ARE BUSY*\n*TRY LATER...*', m)}
+}}
 handler.command = /^y((outube|tb)audio|(outube|tb?)mp3|utubaudio|taudio|ta)$/i
-
-handler.exp = 0
-handler.register = false
-
 export default handler
