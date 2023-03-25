@@ -11,6 +11,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 	{title: "🔞 | Nsfw", rowId: `${usedPrefix + command} nsfw`},
 	{title: "🌟 | PremNsfwChat", rowId: `${usedPrefix + command} premnsfwchat`},
 	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
+	{title: "☎ | AntiCall", rowId: `${usedPrefix + command} anticall`},
 	{title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
 	{title: "📛 | Antitoxic", rowId: `${usedPrefix + command} antitoxic`}, 
 	{title: "📩 | Antispam", rowId: `$usedPrefix + command} antiSpam`}, 
@@ -22,6 +23,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 	{title: "❗ | Restrict", rowId: `${usedPrefix + command} restrick`},
 	{title: "😐 | Listen", rowId: `${usedPrefix + command} nyimak`},
 	{title: "☑️ | Autoread", rowId: `${usedPrefix + command} autoread`},
+	{title: "🫣 | Autoreact", rowId: `${usedPrefix + command} autoreact`},
 	{title: "💬 | PcOnly", rowId: `${usedPrefix + command} pconly`},
 	{title: "🏢 | GcOnly", rowId: `${usedPrefix + command} gconly`},
 	{title: "📷 | SwOnly", rowId: `${usedPrefix + command} swonly`},
@@ -170,11 +172,10 @@ const listMessage = {
        chat.antiSpam = isEnable
        break
        case 'anticall':
-       if (m.isGroup) {
-         if (!(isAdmin || isOwner)) {
-           global.dfail('admin', m, conn)
+       isAll = true
+         if (!isOwner) {
+           global.dfail('rowner', m, conn)
            throw false
-         }
        }
        chat.antiCall = isEnable
        break
@@ -251,6 +252,14 @@ const listMessage = {
         throw false
       }
       global.opts['autoread'] = isEnable
+      break
+	case 'autoreact':
+      isAll = true
+      if (!isROwner) {
+        global.dfail('rowner', m, conn)
+        throw false
+      }
+      global.opts['autoreact'] = isEnable
       break
     case 'pconly':
     case 'privateonly':
