@@ -1,5 +1,5 @@
 // Made By Aguz Familia/@FokusDotId (Fokus ID)
-//recode by xIKRATOSx
+//recode by ImYanXiao
 
 import fs from 'fs'
 import fetch from 'node-fetch'
@@ -23,8 +23,8 @@ handler.all = async function (m) {
                 global.social = pickRandom([global.sgh, global.sig, global.snh, global.sgc]) 
 
 		// Module 
-		global.fetch = import('node-fetch')
-		global.bochil = import('@bochilteam/scraper')
+		global.fetch = (await import('node-fetch')).default
+		global.bochil = await import('@bochilteam/scraper')
 		
                 // Function
                 global.getBuffer = async function getBuffer(url, options) {
