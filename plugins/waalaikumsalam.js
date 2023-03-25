@@ -1,9 +1,9 @@
 import fs from 'fs'
 import fetch from 'node-fetch'
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-let info = ` 📚 _وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ_\n_wa\'alaikumussalam wr.wb._\n
-*ᴏʀᴀɴɢ ʏᴀɴɢ ᴍᴇɴɢᴜᴄᴀᴘᴋᴀɴ ꜱᴀʟᴀᴍ ꜱᴇᴘᴇʀᴛɪ ɪɴɪ ᴍᴀᴋᴀ ɪᴀ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ 30 ᴘᴀʜᴀʟᴀ, ᴋᴇᴍᴜᴅɪᴀɴ, ᴏʀᴀɴɢ ʏᴀɴɢ ᴅɪʜᴀᴅᴀᴘᴀɴ ᴀᴛᴀᴜ ᴍᴇɴᴅᴇɴɢᴀʀɴʏᴀ ᴍᴇᴍʙᴀʟᴀꜱ ᴅᴇɴɢᴀɴ ᴋᴀʟɪᴍᴀᴛ ʏᴀɴɢ ꜱᴀᴍᴀ ʏᴀɪᴛᴜ ᴡᴀᴀʟᴀɪᴋᴜᴍᴜsꜱᴀʟᴀᴍ ᴡᴀʀᴀʜᴍᴀᴛᴜʟʟᴀʜɪ ᴡᴀʙᴀʀᴀᴋᴀᴛᴜʜ” ᴀᴛᴀᴜ ᴅɪᴛᴀᴍʙᴀʜ ᴅᴇɴɢᴀɴ ʏᴀɴɢ ʟᴀɪɴ (ᴡᴀʀɪᴅʜᴡᴀᴀɴᴀ). ᴀʀᴛɪɴʏᴀ ꜱᴇʟᴀɪɴ ᴅᴀʀɪᴘᴀᴅᴀ ᴅᴏ'ᴀ ꜱᴇʟᴀᴍᴀᴛ ᴊᴜɢᴀ ᴍᴇᴍɪɴᴛᴀ ᴘᴀᴅᴀ ᴀʟʟᴀʜ ꜱᴡᴛ"* `
-await conn.send2ButtonDoc(m.chat, `${htki} ᴜ s ᴇ ʀ s ${htka}`, info, 'Jawab', '.tts id Waalaikumsalam', '🎀 Menu', '.menu', fpayment, adReply)
+let info = ` 📚 _وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ_\n_wa\'alaikumussalam wa\'rahmatullahi wa\'barakatuh_\n
+*The person who greets with this salutation will receive 30 rewards. Then, the person in front of them or who hears the greeting responds with the same phrase, 'and peace be upon you and the mercy and blessings of Allah' or can add other words (wariidhwaana). This means that in addition to the prayer for safety, one also asks for Allah's blessings."\n\nUrdu Translation:\n جو شخص اس سلام کے ساتھ جواب دیتا ہے، اسے تقریباً 30 اجر حاصل ہوتے ہیں۔ پھر، جو شخص اس کے سامنے ہوتا ہے یا جو اسے سنتا ہے، اسی فقرے کے ساتھ جواب دیتا ہے جیسے وعلیکم السلام ورحمة الله وبركاته یا کسی دوسرے الفاظ کو شامل کرتا ہے (وریدھوانا)۔ اس کا مطلب یہ ہے کہ سلامتی کی دعا کے علاوہ، آپ اللہ سے برکتیں بھی مانگتے ہیں۔"* `
+await this.reply(m.chat, info, m)
 await conn.sendMessage(m.chat, {
           react: {
             text: '🙏',
