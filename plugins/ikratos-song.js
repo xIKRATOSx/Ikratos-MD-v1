@@ -9,7 +9,7 @@ let name = await conn.getName(m.sender)
     let listSections = []
 	Object.values(dapet).map((v, index) => {
 	listSections.push([index + ' ' + cmenub + ' ' + v.title, [
-          ['Audio 🎧', usedPrefix + 'yta ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n👁️ *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
+          ['Audio 🎧', usedPrefix + 'opta ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n👁️ *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
         ]])
 	})
 	return conn.sendList(m.chat, '*───「 Song Result 」───*', `Please select the type below...\n*The text you requested:* ${text}\n\nRetype *${usedPrefix + command}* your text, to change the text again\n •--𝛸_𝛪𝛫𝑅𝛥𝑇𝛩𝑆_𝛸--• `, author, `Song list 🔎`, listSections, m)
