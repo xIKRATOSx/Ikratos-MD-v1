@@ -1,23 +1,21 @@
-import fs from 'fs'
-let handler = async (m, { conn, args, command }) => {
-let totalf = Object.values(global.plugins).filter(
-    (v) => v.help && v.tags
-  ).length;
- await conn.sendButton(m.chat, `Total Current Bot Features: ${totalf}\n`,wm + '\n\n' + botdate, giflogo, [['MENU','.menu']], m, {
-contextInfo: { externalAdReply :{
-                        mediaUrl: '',
-                        mediaType: 2,
-                        description: 'which',
-                        title: bottime,
-                        body: 'My Total Love To You',          previewType: 0,
-                        thumbnail: fs.readFileSync("./thumbnail.jpg"),
-                        sourceUrl: sig
-                      }}
-})
+import cp from 'child_process'
+import { promisify } from 'util'
+let exec = promisify(cp.exec).bind(cp)
+var handler = async (m) => {
+	await conn.reply(m.chat, "Wait", m)
+    let o
+    try {
+        o = await exec('python3 speed.py --share')
+    } catch (e) {
+        o = e
+    } finally {
+        let { stdout, stderr } = o
+        if (stdout.trim()) m.reply(stdout)
+        if (stderr.trim()) m.reply(stderr)
+    }
 }
-
-
-handler.help = ['totalfitur']
+handler.help = ['testspeed']
 handler.tags = ['info']
-handler.command = ['totalfitur']
+handler.command = /^(speedtest)$/i
+
 export default handler

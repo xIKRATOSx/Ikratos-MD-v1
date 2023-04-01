@@ -8,7 +8,7 @@ import moment from 'moment-timezone'
 import os from 'os'
 import fs from 'fs'
 import fetch from 'node-fetch'
-const { makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = (await import('@adiwajshing/baileys')).default
+const { generateWAMessageFromContent, proto } = (await import('@adiwajshing/baileys')).default
 
 const defaultMenu = {
   before: `
@@ -47,11 +47,7 @@ const defaultMenu = {
   after: `%c4 %me`,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
-	let tags
-	let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'anime', 'update', 'maker', 'edukasi', 'news', 'random', 'game', 'xp', 'islamic', 'stiker', 'rpg', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database','quran', 'vote', 'nsfw', 'audio', 'jadibot', 'info', 'owner', 'nocategory']
-  if (!arrayMenu.includes(teks)) teks = '404'
-  if (teks == 'all') tags = {
+	let tags = {
   'main': 'Main',
   'game': 'Game',
   'rpg': 'RPG Games',

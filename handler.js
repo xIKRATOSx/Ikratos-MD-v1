@@ -307,6 +307,8 @@ export async function handler(chatUpdate) {
                     chat.premiumTime = false
                 if (!('premnsfw' in chat))
                     chat.premnsfw = false
+                if (!('autochat' in chat))
+                    chat.autochat = false  
                 if (!isNumber(chat.expired))
                     chat.expired = 0
             } else
@@ -327,7 +329,8 @@ export async function handler(chatUpdate) {
                     nsfw: false,
                     premium: false,
 	            premiumTime: false,
-                    premnsfw: false, 
+                    premnsfw: false,
+                    autochat: false, 
                 }
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
@@ -336,6 +339,7 @@ export async function handler(chatUpdate) {
                 if (!('autoread' in settings)) settings.autoread = false
                 if (!('restrict' in settings)) settings.restrict = false
                 if (!('anticall' in settings)) settings.anticall = true
+                if (!('autochat' in settings)) settings.autochat = false
                 if (!('autorestart' in settings)) settings.autorestart = false
                 if (!('restartDB' in settings)) settings.restartDB = 0
             } else global.db.data.settings[this.user.jid] = {
@@ -343,6 +347,7 @@ export async function handler(chatUpdate) {
                 autoread: false,
                 autorestart: false,
                 anticall: true,
+                autochat: false,
                 restartDB: 0,
                 restrict: false
             }

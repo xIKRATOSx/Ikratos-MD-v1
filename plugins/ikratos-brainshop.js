@@ -10,16 +10,23 @@
  * @file : Ikratos-brainshop.js
  **/
 
-import axios from 'axios'
-import speed from 'performance-now'
-let handler = async(Void, citel,text) => {
-    let zx = text.length;
-    if (zx < 30) {
-        let {data} = await axios.get(`http://api.brainshop.ai/get?bid=167991&key=aozpOoNOy3dfLgmB&uid=[${citel.sender.split("@")[0]}]&msg=[${text}]`);
-        return citel.reply(data.cnt);  
-    }
-    if (!text) return citel.reply(`Hey there! ${citel.pushName}. How are you doing these days?`);
-}
-handler.tags = ['tool']
-handler.command = /^(chat)$/i
-export default handler
+ import axios from 'axios'
+ import speed from 'performance-now'
+ 
+ let handler = async (m, { conn, text }) => {
+     if (!text) {
+         return m.reply(`Hey there! ${m.pushName}. How are you doing these days?`);
+     }
+     let zx = text.length;
+     if (zx < 30) {
+         let {data} = await axios.get(`
+         http://api.brainshop.ai/get?bid=174153&key=aVicUFcROT6Utoyk&uid=[${m.sender.split("@")[0]}]&msg=[${text}]`);
+         return m.reply(data.cnt);  
+     }
+ }
+ 
+ handler.tags = ['tool']
+ handler.command = /^(chat)$/i
+ 
+ export default handler
+ 
