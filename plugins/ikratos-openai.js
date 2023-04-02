@@ -22,7 +22,7 @@
    if (m.fromMe) return; // ignore messages sent by the bot itself
    if (chat.gpt && m.quoted && m.quoted.fromMe && m.quoted.id && !chat.isBanned) try {
      const configuration = new Configuration({
-      apiKey: global.openAiapi || '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', // Get Your Key from website given below
+      apiKey: global.openAiapi || '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', // Get Your Key from website given below
        });                // https://platform.openai.com/account/api-keys
      const openai = new OpenAIApi(configuration);
 
