@@ -59,6 +59,10 @@ global.namebot = 'Ikratos-MD-v1' //Nama Bot
 global.nameown = 'ᴀʜᴍᴀᴅ ᴀʟɪ🇵🇰' // Nama Owner
 
 
+/*============== CHATGPT ==============*/
+global.openAiapi = ''   // Paste your API key here from Openai website
+//-----------------------> https://platform.openai.com/account/api-keys
+
 /*============== STAFF ==============*/
 global.owner = [
   ['923470027813', 'ᴀʜᴍᴀᴅ ᴀʟɪ🎐', true] //Replace your number with your name

@@ -17,9 +17,13 @@
  
  handler.all = async function (m) {
    let chat = global.db.data.chats[m.chat]
+   let text = m.text || m.quotedMsg && m.quotedMsg.body;
  
    if (m.fromMe) return; // ignore messages sent by the bot itself
-   if (chat.chatgpt && m.quoted && m.quoted.fromMe && m.quoted.id && !chat.isBanned) try {
+   if (chat.gpt && m.quoted && m.quoted.fromMe && m.quoted.id && !chat.isBanned) try {
+     const configuration = new Configuration({
+      apiKey: global.openAiapi || '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', // Get Your Key from website given below
+       });                // https://platform.openai.com/account/api-keys
      const openai = new OpenAIApi(configuration);
 
     const response = await openai.createChatCompletion({
@@ -37,9 +41,14 @@
       m.reply("Please Wait I'm Getting API update rn... Please Try Later :"+ error.message);
     }
   }
+
+  if (/^(gpt|Gpt|ai|openai|Hi)$/i.test(m.text) && !chat.chatgpt && !chat.isBanned) {
+    let tek = `ChatGPT is not Enabled For This Chat\nAsk Owner To Enable It\nContact owner: wa.me/923470027813\n\n${footerTXT}`   
+    m.reply(tek)
  
    return !0;
  }
+}
 
- export default handler;
+export default handler;
  
