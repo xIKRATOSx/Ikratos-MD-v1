@@ -3,11 +3,11 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
    {
 	title: `${dmenub} List Options`,
 	rows: [
-	    {title: "✨ | Welcome", rowId: `${usedPrefix + command} welcome`},
-	    {title: "🚫 | Delete", rowId: `${usedPrefix + command} delete`},
-	    {title: "👁 | Antiviewonce", rowId: `${usedPrefix + command} antiviewonce`}, 
-	    {title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
-	{title: "🗣️ | Simi", rowId: `${usedPrefix + command} simi`},
+	{title: "✨ | Welcome", rowId: `${usedPrefix + command} welcome`},
+	{title: "🚫 | Delete", rowId: `${usedPrefix + command} delete`},
+	{title: "👁 | Antiviewonce", rowId: `${usedPrefix + command} antiviewonce`}, 
+	{title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
+	{title: "🗣️ | Auto-chat", rowId: `${usedPrefix + command} autochat`},
 	{title: "🔞 | Nsfw", rowId: `${usedPrefix + command} nsfw`},
 	{title: "🌟 | PremNsfwChat", rowId: `${usedPrefix + command} premnsfwchat`},
 	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
@@ -23,7 +23,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 	{title: "❗ | Restrict", rowId: `${usedPrefix + command} restrick`},
 	{title: "😐 | Listen", rowId: `${usedPrefix + command} nyimak`},
 	{title: "☑️ | Autoread", rowId: `${usedPrefix + command} autoread`},
-	{title: "🫣 | Autoreact", rowId: `${usedPrefix + command} autoreact`},
 	{title: "💬 | PcOnly", rowId: `${usedPrefix + command} pconly`},
 	{title: "🏢 | GcOnly", rowId: `${usedPrefix + command} gconly`},
 	{title: "📷 | SwOnly", rowId: `${usedPrefix + command} swonly`},
@@ -35,7 +34,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 
 const listMessage = {
   text: ' ',
-  footer: botdate,
+  footer: `ɪᴋʀᴀᴛᴏs-ᴍᴅ-ᴠ1 • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +92 347 0027813`,
   title: `*${htki} 𝙾𝙿𝚃𝙸𝙾𝙽𝚂 ${htka}*`,
   buttonText: "Click Here!",
   sections
@@ -155,12 +154,12 @@ const listMessage = {
         }
       chat.updateAnime = isEnable
       break
-      case 'simi':
+      case 'autochat':
         if (!isROwner) {
           global.dfail('rowner', m, conn)
           throw false
         }
-      chat.simi = isEnable
+      chat.autochat = isEnable
       break
       case 'antispam':
        if (m.isGroup) {
@@ -252,14 +251,6 @@ const listMessage = {
         throw false
       }
       global.opts['autoread'] = isEnable
-      break
-	case 'autoreact':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      global.opts['autoreact'] = isEnable
       break
     case 'pconly':
     case 'privateonly':

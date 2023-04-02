@@ -11,22 +11,27 @@
  **/
 
  import axios from 'axios'
- import speed from 'performance-now'
+
+ let handler = m => m
  
- let handler = async (m, { conn, text }) => {
-     if (!text) {
-         return m.reply(`Hey there! ${m.pushName}. How are you doing these days?`);
-     }
-     let zx = text.length;
-     if (zx < 30) {
-         let {data} = await axios.get(`
-         http://api.brainshop.ai/get?bid=174153&key=aVicUFcROT6Utoyk&uid=[${m.sender.split("@")[0]}]&msg=[${text}]`);
-         return m.reply(data.cnt);  
-     }
+ handler.all = async function (m) {
+   let chat = global.db.data.chats[m.chat]
+ 
+   if (m.fromMe) return; // ignore messages sent by the bot itself
+   if (chat.autochat && m.quoted && m.quoted.fromMe && m.quoted.id && !chat.isBanned) {
+     let text = m.text || m.quotedMsg && m.quotedMsg.body;  
+     if (text) {
+       let zx = text.length;
+       if (zx < 30) {
+         let { data } = await axios.get(`http://api.brainshop.ai/get?bid=174153&key=aVicUFcROT6Utoyk&uid=[${m.sender.split("@")[0]}]&msg=[${text}]`);
+         this.sendPresenceUpdate('typing', m.chat) 
+         return m.reply(data.cnt);
+       }
+     }  
+   }
+ 
+   return !0;
  }
- 
- handler.tags = ['tool']
- handler.command = /^(chat)$/i
- 
- export default handler
+
+ export default handler;
  
