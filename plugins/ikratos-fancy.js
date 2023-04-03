@@ -10,26 +10,36 @@
  * @file : Ikratos-fancy.js
  **/
 
- import { listall, tiny, fancytext } from '../lib/index.js';
+ import fancyText from '../lib/fancy.js';
 
-
- let handler = async(Void, citel, text) => {
-  if (isNaN(text.split(" ")[0]) || !text) {
-      let text = tiny(
-          "Fancy text generator\n\nExample: .fancy 32 Secktor\n\n"
-      );
-      listall("Secktor Bot").forEach((txt, num) => {
-          text += `${(num += 1)} ${txt}\n`;
-      });
-      return await citel.reply(text);
+let handler = async (m, { conn, text }) => {
+function convertText(text) {
+  let fancyTextMessage = '';
+  
+  for (const style in fancyText) {
+    const convertedText = apply(fancyText[style], text);
+    fancyTextMessage += convertedText + '\n';
   }
 
-  let fancytextt = await fancytext(`${text.slice(2)}`, text.split(" ")[0])
-  citel.reply(fancytextt)
+  return `Here's your fancy text:\n${fancyTextMessage}`;
+}
 
+function apply(map, text) {
+  let result = '';
+  for (const character of text.split('')) {
+    if (map[character] !== undefined) {
+      result += map[character];
+    } else if (map[character.toLowerCase()] !== undefined) {
+      result += map[character.toLowerCase()];
+    } else {
+      result += character;
+    }
+  }
+  return result;
+ }
 }
 
   handler.help = ['fancy <text>']
   handler.tags = ['tool','maker']
-  handler.command = /^(ifancy|fancy)$/i
+  handler.command = /^(fff)$/i
   export default handler
