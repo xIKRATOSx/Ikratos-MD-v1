@@ -6,7 +6,7 @@ let info = ` 📚 _وَعَلَيْكُمْ السَّلاَمُ وَرَحْم�
 await conn.reply(m.chat, info, m)
 return conn.sendMessage(m.chat, {
           react: {
-            text: '🙏',
+            text: '🤝🏼',
             key: m.key,
           }})
 }
