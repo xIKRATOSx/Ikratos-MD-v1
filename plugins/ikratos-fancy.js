@@ -12,32 +12,29 @@
 
  import fancyText from '../lib/fancy.js';
 
-let handler = async (m, { conn, text }) => {
-function convertText(text) {
-  let fancyTextMessage = '';
-  
-  for (const style in fancyText) {
-    const convertedText = apply(fancyText[style], text);
-    fancyTextMessage += convertedText + '\n';
+let handler = async (m, { conn, text, args }) => {
+  if (!text) {
+    return m.reply('Please provide some text to apply the styles to.');
   }
 
-  return `Here's your fancy text:\n${fancyTextMessage}`;
-}
+  const inputArgs = text.split(" ");
+  const code = parseInt(inputArgs[0]);
+  const message = inputArgs.slice(1).join(" ");
 
-function apply(map, text) {
-  let result = '';
-  for (const character of text.split('')) {
-    if (map[character] !== undefined) {
-      result += map[character];
-    } else if (map[character.toLowerCase()] !== undefined) {
-      result += map[character.toLowerCase()];
-    } else {
-      result += character;
+  if (!message) {
+    return await m.reply('Reply to a text or type text after command with a numeric code\n_Example: .fancy 10 Hello_\n                      .fancy Hello world\n                      .fancy <reply> 13\n\n'+String.fromCharCode(8206).repeat(4001)+fancy.list('Text here',fancy));
+  }
+
+  try {
+    if (!code) {
+      return await m.reply(fancy.list(message, fancy));
     }
+    return await m.reply(fancy.apply(fancy[code - 1], m.quotedMsg ? m.quotedMsg.text : message));
+  } catch {
+    return await m.reply('_No such style :(_');
   }
-  return result;
- }
 }
+
 
   handler.help = ['fancy <text>']
   handler.tags = ['tool','maker']

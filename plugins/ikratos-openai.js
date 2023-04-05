@@ -42,7 +42,7 @@
     }
   }
 
-  if (/^(gpt|Gpt|ai|openai|Hi)$/i.test(m.text) && !chat.chatgpt && !chat.isBanned) {
+  if (/^(gpt|Gpt|ai|openai)$/i.test(m.text) && !chat.chatgpt && !chat.isBanned) {
     let tek = `ChatGPT is not Enabled For This Chat\nAsk Owner To Enable It\nContact owner: wa.me/923470027813\n\n${footerTXT}`   
     m.reply(tek)
  
