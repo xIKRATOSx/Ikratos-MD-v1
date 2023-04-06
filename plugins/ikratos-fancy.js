@@ -38,5 +38,5 @@ let handler = async (m, { conn, text, args }) => {
 
   handler.help = ['fancy <text>']
   handler.tags = ['tool','maker']
-  handler.command = /^(fff)$/i
+  handler.command = /^(fff|stext|ftext|fancy)$/i
   export default handler
