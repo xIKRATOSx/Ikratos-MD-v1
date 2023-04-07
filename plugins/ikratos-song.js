@@ -17,7 +17,7 @@ let name = await conn.getName(m.sender)
 handler.help = ['ytsearch <query>']
 handler.tags = ['tools']
 handler.command = /^song?$/i
-handler.premium = true
+handler.premium = false
 
 
 export default handler
