@@ -105,7 +105,7 @@
              version, 
          printQRInTerminal: true, 
          auth: state, 
-         browser: ['Elaina(イレイナ)', 'Safari', '3.1.0'],  
+         browser: ['Ikratos-MD', 'Safari', '3.1.0'],  
                patchMessageBeforeSending: (message) => { 
                  const requiresPatch = !!( 
                      message.buttonsMessage  
