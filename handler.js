@@ -141,8 +141,6 @@ export async function handler(chatUpdate) {
                     user.robo = 0
                 if (!isNumber(user.roboxp))
                     user.roboxp = 0
-
-
                 if (!isNumber(user.horselastfeed))
                     user.horselastfeed = 0
                 if (!isNumber(user.catlastfeed))
@@ -151,8 +149,6 @@ export async function handler(chatUpdate) {
                     user.foxlastfeed = 0
                 if (!isNumber(user.doglastfeed))
                     user.doglastfeed = 0
-
-
                 if (!isNumber(user.armor))
                     user.armor = 0
                 if (!isNumber(user.armordurability))
@@ -169,8 +165,6 @@ export async function handler(chatUpdate) {
                     user.fishingrod = 0
                 if (!isNumber(user.fishingroddurability))
                     user.fishingroddurability = 0
-
-
                 if (!isNumber(user.lastclaim))
                     user.lastclaim = 0
                 if (!isNumber(user.lastadventure))
@@ -191,8 +185,6 @@ export async function handler(chatUpdate) {
                     user.lastmonthly = 0
                 if (!isNumber(user.lastbunga))
                     user.lastbunga = 0
-                    
-
                 if (!isNumber(user.premium))
                     user.premium = false
                 if (!isNumber(user.premiumTime))
@@ -319,7 +311,7 @@ export async function handler(chatUpdate) {
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
-                    gpt: false,
+                    gpt: true,
                     detect: false,
                     sWelcome: '',
                     sBye: '',
@@ -345,7 +337,6 @@ export async function handler(chatUpdate) {
                 if (!('autoread' in settings)) settings.autoread = false
                 if (!('restrict' in settings)) settings.restrict = false
                 if (!('anticall' in settings)) settings.anticall = true
-                if (!('autochat' in settings)) settings.autochat = false
                 if (!('autorestart' in settings)) settings.autorestart = false
                 if (!('restartDB' in settings)) settings.restartDB = 0
             } else global.db.data.settings[this.user.jid] = {
@@ -353,7 +344,6 @@ export async function handler(chatUpdate) {
                 autoread: false,
                 autorestart: false,
                 anticall: true,
-                autochat: false,
                 restartDB: 0,
                 restrict: false
             }
@@ -686,6 +676,7 @@ export async function participantsUpdate({ id, participants, action }) {
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
+                    let nickgc = await conn.getName(id)
                     let pp = 'https://telegra.ph/file/24fa902ead26340f3df2c.png'
                     let ppgc = 'https://telegra.ph/file/24fa902ead26340f3df2c.png'
                     try {
@@ -713,32 +704,18 @@ export async function participantsUpdate({ id, participants, action }) {
                 .toAttachment()
                             
                         // this.sendFile(id, action === 'add' ? wel : lea, pp, 'pp.jpg', text, null, false, { mentions: [user] })
-                       await this.sendHydrated(id, global.ucapan, text, action === 'add' ? wel.toBuffer() : lea.toBuffer(), sgc, (action == 'add' ? '💌 WELCOME' : '🐾 BYE'), user.split`@`[0], 'ɴᴜᴍʙᴇʀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ', [
-      [action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'bilek']], null, fkontak, { mentions: [user] })
-                        /*let wel = API('males', '/welcome2', {
-                                profile: pp,
-                                username: await this.getName(user),
-                                background: 'https://telegra.ph/file/0b814069d86ee9a022da5.jpg',
-                                groupname: await this.getName(id),
-                                membercount: groupMetadata.participants.length
-                            })
-                            let lea = API('males', '/goodbye3', {
-                                profile: pp,
-                                username: await this.getName(user),
-                                background: 'https://telegra.ph/file/0db212539fe8a014017e3.jpg',
-                                groupname: await this.getName(id),
-                                membercount: groupMetadata.participants.length
-                            })
-    conn.sendButtonDoc(id, text, wm, action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'ok', fkontak, { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: global.sig,
-    mediaType: 2, 
-    description: global.sig, 
-    title: wm3,
-    body: wm,
-    thumbnail: await(await fetch(action === 'add' ? wel : lea)).buffer(),
-    sourceUrl: sig
-     }}
-  })*/
+                       /*await this.sendHydrated(id, global.ucapan, text, action === 'add' ? wel.toBuffer() : lea.toBuffer(), sgc, (action == 'add' ? '💌 WELCOME' : '🐾 BYE'), user.split`@`[0], 'ɴᴜᴍʙᴇʀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ', [
+      [action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'bilek']], null, fkontak, { mentions: [user] })*/
+      await conn.sendButtonImg(id, action === 'add' ? wel : lea, action == 'add' ? 'Selamat Datang Di ' + nickgc : 'Selamat Tinggal Dari ' + nickgc, text, 'Menu', '.menu', fkontak, { contextInfo: { externalAdReply: { showAdAttribution: true,
+        mediaUrl: global.sig,
+        mediaType: 2, 
+        description: global.sig, 
+        title: '',
+        body: wm,
+        thumbnail: await(await fetch(thumb)).buffer(),
+        sourceUrl: sig
+         }}
+      })
                     }
                 }
             }
