@@ -39,13 +39,14 @@ if (!text) throw `Use example ${usedPrefix}${command} arcade`
   let buttons = [{ buttonText: { displayText: '🎶 Audio' }, buttonId: `${usedPrefix}opta ${url}` }, { buttonText: { displayText: '🎥 Video' }, buttonId: `${usedPrefix}optv ${url}` }]
   let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: capt, footer: 'Follow me on instagram:\n\tinstagram.com/itx_ahmad.ali', buttons }, { quoted: m })
   // if (durationS > 4000) return conn.sendMessage(m.chat, { text: `*Download:* ${await shortUrl(ytLink)}\n\n_Duration too long..._` }, { quoted: msg })
-} catch {
+} 
+  /*catch {
  /**
  *
  * @param {*} query
  * @param {*} options
  * @returns
- */
+ *
 async function search(query, options = {}) {
   const search = await yts.search({ query, hl: "es", gl: "ES", ...options });
   return search.videos;
@@ -64,7 +65,7 @@ let buttons = [{ buttonId: `${usedPrefix}opta ${url}`, buttonText: { displayText
 let msg = await conn.sendMessage(m.chat, { image: { url: yt_play[0].image }, caption: text1, footer: 'Follow me on instagram:\n\tinstagram.com/itx_ahmad.ali', buttons }, { quoted: m })
 } catch {
   throw `I\'m Getting API Update Right Now... Please Try Later...`
- }
+ }*/
 }
 handler.help = ['play', 'play2'].map(v => v + ' <pencarian>')
 handler.tags = ['downloader', 'limitmenu']
