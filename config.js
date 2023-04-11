@@ -71,7 +71,9 @@ global.owner = [
 global.mods = [] // Want some help?
 global.prems = ['923470027813','68673045381','923191089077'] // Premium user is not here to add it, type .addprem @ user 10
 
-
+global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
+global.lolkeysapi = ['BrunoSobrino']
+global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.lolkey = 'apikeymu'
 global.xkey = 'APIKEYMU'
 /*============== API ==============*/
