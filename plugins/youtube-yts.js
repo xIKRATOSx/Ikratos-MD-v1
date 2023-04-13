@@ -29,14 +29,14 @@
     await conn.reply(m.chat, global.wait, m)
     let cara = await yts(text)
     let depat = cara.all
-    let listSections = []
+    let listSections2 = []
     Object.values(depat).map((v, index) => {
       listSections.push([index + ' ' + cmenub + ' ' + `${v.title}`, [
               ['Video🎧', usedPrefix + 'ytmp4 ' + `${v.url}` , '\n⌚ *Duration:* ' + `${v.timestamp}` + '\n📎 *Url:* ' + `${v.url}`],
               ['Audio 🎧', usedPrefix + 'ytmp3 ' + `${v.url}` + ' yes', '\n⌚ *Duration:* ' + `${v.timestamp}` +  '\n📎 *Url:* ' + `${v.url}`]
             ]])
       })
-    conn.sendFile(m.chat, depat[0].thumbnail, 'yts.jpeg', listSections, m)
+     return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nRetype *${usedPrefix + command}* your text to change the text again`, author, `YouTube Search 🔎`, listSections2, m)
   }
  }
  handler.help = ['ytsearch <query>']
