@@ -31,7 +31,7 @@
     let depat = cara.all
     let listSections2 = []
     Object.values(depat).map((v, index) => {
-      listSections.push([index + ' ' + cmenub + ' ' + `${v.title}`, [
+      listSections2.push([index + ' ' + cmenub + ' ' + `${v.title}`, [
               ['Video🎧', usedPrefix + 'ytmp4 ' + `${v.url}` , '\n⌚ *Duration:* ' + `${v.timestamp}` + '\n📎 *Url:* ' + `${v.url}`],
               ['Audio 🎧', usedPrefix + 'ytmp3 ' + `${v.url}` + ' yes', '\n⌚ *Duration:* ' + `${v.timestamp}` +  '\n📎 *Url:* ' + `${v.url}`]
             ]])
