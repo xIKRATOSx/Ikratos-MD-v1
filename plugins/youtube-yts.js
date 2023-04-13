@@ -30,7 +30,7 @@
     let cara = await yts(text)
     let depat = cara.all
     let listSections = []
-    Object.values(dapat).map((v, index) => {
+    Object.values(depat).map((v, index) => {
       listSections.push([index + ' ' + cmenub + ' ' + v.title, [
               ['Video🎧', usedPrefix + 'ytmp4 ' + v.url , '\n⌚ *Duration:* ' + v.timestamp + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url],
               ['Audio 🎧', usedPrefix + 'ytmp3 ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.timestamp +  '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
