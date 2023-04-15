@@ -1,5 +1,11 @@
 import { areJidsSameUser } from '@adiwajshing/baileys'
 let handler = async (m, { conn, participants }) => {
+    let ownerGroup = m.chat.split`-`[0] + "@s.whatsapp.net";
+  if(m.quoted){
+if(m.quoted.sender === ownerGroup || m.quoted.sender === conn.user.jid) return;
+let usr = m.quoted.sender;
+await conn.groupParticipantsUpdate(m.chat, [usr], "remove"); return;
+}
     let users = m.mentionedJid.filter(u => !areJidsSameUser(u, conn.user.id))
     let kickedUser = []
     for (let user of users)
