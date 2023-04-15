@@ -21,5 +21,5 @@ await m.reply('*Error, Server Is Busy Right Now Please Try Later*')
 }}
 handler.help = ['playstore <aplicacion>']
 handler.tags = ['internet']
-handler.command = /^(playstore)$/i
+handler.command = /^(playstore|apksearch)$/i
 export default handler
