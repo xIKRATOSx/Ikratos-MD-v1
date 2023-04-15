@@ -36,16 +36,12 @@ ${arr.slice(6).join('')}
 *It's @${room.game.currentTurn.split('@')[0]}*'s turn
 *- To surrender you can use the word "exit", do not write any prefix or " or * and the message must be responding to the Bot's message where the game table comes out*
 `.trim()
-        if (room.x !== room.o) m.reply(str, room.x, {
-            contextInfo: {
-                mentionedJid: conn.parseMention(str)
-            }
-        })
-        m.reply(str, room.o, {
-            contextInfo: {
-                mentionedJid: conn.parseMention(str)
-            }
-        })
+if (room.x !== room.o) await conn.sendMessage(room.x, { image: { url: 'https://i.ibb.co/BP8RnZf/dare.jpg' }, caption: str, footer: `${footerTXT}` }, m, {contextInfo: {mentionedJid: conn.parseMention(str) }} )
+await conn.sendMessage(room.o, { image: { url: 'https://i.ibb.co/BP8RnZf/dare.jpg' }, caption: str, footer: `${footerTXT}` }, m, {contextInfo: {mentionedJid: conn.parseMention(str) }} )
+/*if (room.x !== room.o) await conn.sendMessage(room.x, str, m, {contextInfo: {mentionedJid: conn.parseMention(str) }} )
+await conn.sendMessage(room.o, str, m, {contextInfo: {mentionedJid: conn.parseMention(str) }} )*/
+        /*if (room.x !== room.o) m.reply(str, room.x, {contextInfo: {mentionedJid: conn.parseMention(str) }} )
+        m.reply(str, room.o, {contextInfo: {mentionedJid: conn.parseMention(str) }} )*/
     } else {
         room = {
             id: 'tictactoe-' + (+new Date),
