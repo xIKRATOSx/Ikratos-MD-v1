@@ -279,6 +279,8 @@ export async function handler(chatUpdate) {
                     chat.sWelcome = ''
                 if (!('sBye' in chat))
                     chat.sBye = ''
+                if (!('sAlive' in chat))
+                    chat.sAlive = ''    
                 if (!('sPromote' in chat))
                     chat.sPromote = ''
                 if (!('sDemote' in chat))
@@ -311,10 +313,11 @@ export async function handler(chatUpdate) {
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
-                    gpt: true,
+                    gpt: false,
                     detect: false,
                     sWelcome: '',
                     sBye: '',
+                    sAlive: '',
                     sPromote: '',
                     sDemote: '',
                     delete: true,
@@ -703,10 +706,10 @@ export async function participantsUpdate({ id, participants, action }) {
                 .setBackground("https://telegra.ph/file/0db212539fe8a014017e3.jpg")
                 .toAttachment()
                             
-                        // this.sendFile(id, action === 'add' ? wel : lea, pp, 'pp.jpg', text, null, false, { mentions: [user] })
+                         this.sendFile(id, action === 'add' ? wel : lea, pp, 'pp.jpg', text, null, false, { mentions: [user] })
                        /*await this.sendHydrated(id, global.ucapan, text, action === 'add' ? wel.toBuffer() : lea.toBuffer(), sgc, (action == 'add' ? '💌 WELCOME' : '🐾 BYE'), user.split`@`[0], 'ɴᴜᴍʙᴇʀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ', [
       [action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'bilek']], null, fkontak, { mentions: [user] })*/
-      await conn.sendButtonImg(id, action === 'add' ? wel : lea, action == 'add' ? 'Welcome To ' + nickgc : 'Goodbye From' + nickgc, text, 'Menu', '.menu', fkontak, { contextInfo: { externalAdReply: { showAdAttribution: true,
+      /*await conn.sendButtonImg(id, action === 'add' ? wel : lea, action == 'add' ? 'Welcome To ' + nickgc : 'Goodbye From' + nickgc, text, 'Menu', '.menu', fkontak, { contextInfo: { externalAdReply: { showAdAttribution: true,
         mediaUrl: global.sig,
         mediaType: 2, 
         description: global.sig, 
@@ -715,7 +718,7 @@ export async function participantsUpdate({ id, participants, action }) {
         thumbnail: await(await fetch(thumb)).buffer(),
         sourceUrl: sig
          }}
-      })
+      })*/
                     }
                 }
             }
