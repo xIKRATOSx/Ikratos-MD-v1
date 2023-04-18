@@ -28,19 +28,24 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
         let str = `
 ⭕️ *Classic game of jack or 3 in a row* ❌
 *How to play?* _Respond to the message sent by the Bot with the game board, the message must contain the position you want to be in (1,2,3,4,5,6,7,8,9)
-        
+                
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
-        
+                
 *It's @${room.game.currentTurn.split('@')[0]}'s turn*
 *- To surrender you can use the word command "#delttt"*
 `.trim()
-        if (room.x !== room.o) await conn.sendMessage(room.x, str, m, {
-            mentions: conn.parseMention(str)
+			m.reply(str)
+        if (room.x !== room.o) m.reply(str, room.x, {
+            contextInfo: {
+                mentionedJid: conn.parseMention(str)
+            }
         })
-        await conn.sendMessage(room.o, str, m, {
-            mentions: conn.parseMention(str)
+        m.reply(str, room.o, {
+            contextInfo: {
+                mentionedJid: conn.parseMention(str)
+            }
         })
     } else {
         room = {
