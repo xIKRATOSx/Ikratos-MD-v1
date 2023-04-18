@@ -278,9 +278,7 @@ export async function handler(chatUpdate) {
                 if (!('sWelcome' in chat))
                     chat.sWelcome = ''
                 if (!('sBye' in chat))
-                    chat.sBye = ''
-                if (!('sAlive' in chat))
-                    chat.sAlive = ''    
+                    chat.sBye = ''   
                 if (!('sPromote' in chat))
                     chat.sPromote = ''
                 if (!('sDemote' in chat))
@@ -317,7 +315,6 @@ export async function handler(chatUpdate) {
                     detect: false,
                     sWelcome: '',
                     sBye: '',
-                    sAlive: '',
                     sPromote: '',
                     sDemote: '',
                     delete: true,
