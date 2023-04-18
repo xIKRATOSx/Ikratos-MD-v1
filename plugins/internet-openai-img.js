@@ -1,5 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai'
-const configuration = new Configuration({ organization: 'org-uO3fYb1P5QbXpDNRxEw1Awu6', apiKey: global.AIimg || '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'});
+const configuration = new Configuration({ organization: global.org, apiKey: global.openAiapi});
 const openaiii = new OpenAIApi(configuration);
 let handler = async (m, { conn, text, command }) => {
 
@@ -11,9 +11,9 @@ let handler = async (m, { conn, text, command }) => {
               n: 1,
               size: "1024x1024",
             });
-conn.sendButtonImg(m.chat, response.data.data[0].url, 'Done', wm, 'Menu', '.m', m)
+conn.sendMessage(m.chat, response.data.data[0].url, m)
 }
-handler.help = ['ai-image']
+handler.help = ['ai-image']  
 handler.tags = ['internet']
 handler.command = /^(dalle|aiimg|aiimage|ai-img|openaiimage|ai-image)$/i
 handler.limit = true 

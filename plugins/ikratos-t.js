@@ -212,7 +212,7 @@ let buttons = [{ buttonText: { displayText: 'Truth or Dare' }, buttonId: `${used
 'Have you ever reported someone for doing something wrong (either to the police or at work/school)?',
 'If your house caught on fire and you could only save three things (besides people), what would they be?',
 'If you could pick one other player to take with you to a deserted island, who would it be?',
-'What sport or hobby do you wish you would’ve picked up as a child?',
+'What sport or hobby do you wish you would\'ve picked up as a child?',
 'Have you ever stolen anything?',
 'What\'s the weirdest dream you\'ve ever had?',
 'If you could travel to any year in a time machine, what year would you choose and why?',
