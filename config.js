@@ -41,22 +41,22 @@ let wibh = moment.tz('Asia/Karachi').format('HH')
 /*============== SOCIAL ==============*/
 
 // if you don't have it, type "-" or leave it alone so that there are credits :v
-global.sig = 'https://instagram.com/itx_ahmad.ali' //Link Instagrammu
-global.sgh = 'https://github.com/xIKRATOSx' //Link Githubmu
-global.sgc = 'https://chat.whatsapp.com/DxIb5oWzpg24mmg9D9zw5Y'
+global.sig = 'https://instagram.com/shankss_redd' //Link Instagrammu
+global.sgh = 'https://github.com/hotarooob' //Link Githubmu
+global.sgc = 'https://chat.whatsapp.com/DuzLsVkupC57MGLNOXstxq'
 global.sdc = '-' //Fill it out using the Discord link, if there is one, just leave it
-global.snh = 'https://nhentai.net/g/HaramTod🗿' //Hmmm, This is up to you to fill in :v
+global.snh = 'https://chat.whatsapp.com/DuzLsVkupC57MGLNOXstxq' //Hmmm, This is up to you to fill in :v
 
 /*============== PAYMENT ==============*/
-global.pdana = '085736178354' //Nomor Danamu
-global.ppulsa = '085736178354' //Nomor SimCard Yang Kamu Pake
-global.psaweria = 'https://saweria.com/XiaoYan021' //Link Saweriamu Kalo Nggada Ketik - aja
+global.pdana = '96176907995' //Nomor Danamu
+global.ppulsa = '96176907995' //Nomor SimCard Yang Kamu Pake
+global.psaweria = 'https://eria.com/XiaoYan021' //Link Saweriamu Kalo Nggada Ketik - aja
 
 /*============== NOMOR ==============*/
-global.nomorbot = '68673045381' //Nomor Bot
-global.nomorown = '923470027813' //Nomor Owner
-global.namebot = 'Ikratos-MD-v1' //Nama Bot
-global.nameown = 'ᴀʜᴍᴀᴅ ᴀʟɪ🇵🇰' // Nama Owner
+global.nomorbot = '96170297785' //Nomor Bot
+global.nomorown = '96176907995' //Nomor Owner
+global.namebot = 'yonko-valley' //Nama Bot
+global.nameown = 'shanks red🏴‍☠️' // Nama Owner
 
 
 /*============== CHATGPT ==============*/
@@ -65,11 +65,11 @@ global.org = ''   // Get you Org-Key from 'https://platform.openai.com/account/o
 
 /*============== STAFF ==============*/
 global.owner = [
-  ['923470027813', 'ᴀʜᴍᴀᴅ ᴀʟɪ🎐', true] //Replace your number with your name
+  ['96176907995', 'shanks red🏴‍☠️', true] //Replace your number with your name
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
-global.prems = ['923470027813','68673045381','923191089077'] // Premium user is not here to add it, type .addprem @ user 10
+global.prems = ['96176907995','96176907995','96176907995'] // Premium user is not here to add it, type .addprem @ user 10
 
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.lolkeysapi = ['BrunoSobrino']
@@ -103,26 +103,26 @@ global.APIKeys = { // APIKey Here
 // The word APIKEY is filled with your own apikey, by buying it on the website
 
 /*============== WATERMARK ==============*/
-global.wm = '「 ɪᴋʀᴀᴛᴏs-ᴍᴅ-ᴠ𝟷 」' //Main Watermark
-global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘Ahmad Ali- ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
-global.wm3 = 'ɪᴋʀᴀᴛᴏs-ᴍᴅ-ᴠ𝟷'
-global.footerTXT = `ɪᴋʀᴀᴛᴏs-ᴍᴅ-ᴠ1 • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +92 347 0027813`
-global.fig = `Follow me on instagram:\n\t\tinstagram.com/itx_ahmad.ali`
+global.wm = '「yonkos valley」' //Main Watermark
+global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘shanks red- ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
+global.wm3 = 'yonko valley'
+global.footerTXT = `ɪᴋʀᴀᴛᴏs-ᴍᴅ-ᴠ1 • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +96176907995`
+global.fig = `Follow me on instagram:\n\t\tinstagram.com/shankss_redd`
 global.botdate = `⫹⫺ Date: ${week} ${date}`
 global.bottime = `Time : ${wktuwib}`
-global.titlebot = '🎋 ┊ ɪᴋʀᴀᴛᴏs ʙᴏᴛ ᴡʜᴀᴛsᴀᴘᴘ'
+global.titlebot = '🎋 ┊yonkos valley bot'
 global.author = global.wm
 global.logo = 'https://i.ibb.co/cc8jfkX/01.jpg'
 
 
 
 /*============== LOGO ==============*/
-global.thumb = 'https://i.ibb.co/cc8jfkX/01.jpg' //Main Thumbnail
-global.thumb2 = 'https://i.ibb.co/cc8jfkX/01.jpg'
-global.thumbbc = 'https://i.ibb.co/cc8jfkX/01.jpg' //For broadcast
-global.giflogo = 'https://telegra.ph/file/a46ab7fa39338b1f54d5a.mp4'
-global.thumblvlup = 'https://i.ibb.co/cc8jfkX/01.jpg'
-global.hwaifu = ['https://i.ibb.co/cc8jfkX/01.jpg']
+global.thumb = 'https://h.top4top.io/p_2665pvmm91.jpg' //Main Thumbnail
+global.thumb2 = 'https://h.top4top.io/p_2665pvmm91.jpg'
+global.thumbbc = 'https://h.top4top.io/p_2665pvmm91.jpg' //For broadcast
+global.giflogo = 'https://h.top4top.io/p_2665pvmm91.jpg'
+global.thumblvlup = 'https://h.top4top.io/p_2665pvmm91.jpg'
+global.hwaifu = ['https://h.top4top.io/p_2665pvmm91.jpg']
 
 /*============== FlamingText ===========*/
 global.flaaa = [
@@ -138,7 +138,7 @@ global.wait = '```「▰▰▰▱▱▱▱▱▱▱」Loading...```'
 global.eror = '```404 error```'
 global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
 global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
-global.phn = '+92 347 0027813'
+global.phn = '+96176907995'
 
 /*=========== TYPE DOCUMENT ===========*/
 global.dpptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
@@ -148,7 +148,7 @@ global.dpdf = 'application/pdf'
 global.drtf = 'text/rtf'
 global.djson = 'application/json'
 
-global.thumbdoc = 'https://i.ibb.co/cc8jfkX/01.jpg'
+global.thumbdoc = 'https://h.top4top.io/p_2665pvmm91.jpg'
 
 /*=========== FAKE SIZE ===========*/
 global.fsizedoc = '5644' // default 10TB
@@ -157,7 +157,7 @@ global.fpagedoc = '999'
 /*=========== HIASAN ===========*/
 // DEFAULT MENU
 global.dmenut = 'ଓ═┅═━–〈' //top
-global.dmenub = '┊🇵🇰' //body
+global.dmenub = '┊🏴‍☠️' //body
 global.dmenub2 = '┊' //body for info cmd on Default menu
 global.dmenuf = '┗––––––––––✦' //footer
 
@@ -178,10 +178,10 @@ global.htjava = '⫹⫺'    //hiasan Doang :v
 global.hsquere = ['⛶','❏','⫹⫺']
 
 /*============== STICKER WM ==============*/
-global.stickpack = 'x_ikratos_x'
-global.stickauth = `「 ɪᴋʀᴀᴛᴏs-ᴍᴅ-ᴠ𝟷 」`
-global.packname = 'Cʀᴇᴀᴛᴇᴅ Bʏ'
-global.packname2 = 'ᴄʀᴇᴀᴛᴇᴅ ʙʏ ɪᴋʀᴀᴛᴏs'
+global.stickpack = '🏴‍☠️yonkos valley🏴‍☠️'
+global.stickauth = `「shanks red💀」`
+global.packname = 'صنع بواسطة'
+global.packname2 = 'اليونكو ڤالي 🏴‍☠️'
 
 global.multiplier = 38 // The higher, The harder levelup
 
