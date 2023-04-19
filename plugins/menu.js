@@ -201,8 +201,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
 │⬡ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* User Banned
 ┬
 ├━━━━━━━━━━━━━━━━┈─⋆
-│ ▸ *ᴀᴜᴛʜᴏʀ :* Ahmad Ali
-┴ ▸ *ᴏᴡɴᴇʀ :* xIKRATOSx
+│ ▸ *ᴀᴜᴛʜᴏʀ :* shanks red
+┴ ▸ *ᴏᴡɴᴇʀ :* yonko valley
 ✧
 ┬ 📌 𝗣𝗶𝗻𝗻𝗲𝗱 :
 │ Give me a break, SIS ^ω^
@@ -485,7 +485,7 @@ const listMessage = {
       showAdAttribution: true
       }}}}}}, {})*/
       
-     //---Made By @ImYanXiao
+     //---Made By @shankss_redd
     // Mampus Di Enc 🧢
     // Gausah Dihapus, Thx
     //------------------ DOCUMENT WITH EXTERNALADS WITHOUT BUTTON
