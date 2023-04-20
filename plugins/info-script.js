@@ -3,7 +3,7 @@
 import fetch from 'node-fetch'
 var handler = async(m, { conn, text, usedPrefix, command }) => {
 
-    let str = `*https://github.com/xIKRATOSx/Ikratos-MD-v1\n\nDon\'t forget to give a star*`
+    let str = `*https://github.com/xIKRATOSx/Ikratos-MD-v1*\n\n*Don\'t forget to give a star*`
     let waifu = await fetch('https://raw.githubusercontent.com/ArugaZ/grabbed-results/main/random/anime/waifu.txt')
     let chen = await waifu.text()
     let ran = chen.split('\n')
@@ -13,6 +13,6 @@ var handler = async(m, { conn, text, usedPrefix, command }) => {
 }
 handler.help = ['sc', 'script']
 handler.tags = ['info', 'main']
-handler.command =  /^(script|sc)$/i
+handler.command =  /^(script|sc|git)$/i
 
 export default handler
