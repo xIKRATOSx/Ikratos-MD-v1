@@ -9,7 +9,7 @@ let handler = async (m, { conn, groupMetadata, usedPrefix, text, args, command }
 `
 let buttons = [{ buttonText: { displayText: 'Video' }, buttonId: `${usedPrefix}ytv ${text} ` }, { buttonText: { displayText: 'Document' }, buttonId: `${usedPrefix}vdoc ${text} ` }]
 							 
-let msg = await conn.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/cc8jfkX/01.jpg' }, caption: capt, footer: `${foooterTXT}`, buttons }, { quoted: m })
+let msg = await conn.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/cc8jfkX/01.jpg' }, caption: capt, footer: `${footerTXT}`, buttons }, { quoted: m })
 }
 
 handler.command = /^optv?$/i
