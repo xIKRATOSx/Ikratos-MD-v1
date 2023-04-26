@@ -1,4 +1,4 @@
-let handler = m => m
+/*let handler = m => m
 
 handler.before = async function (m) {
    if (m.sender.startsWith('212' || '212')) {
@@ -18,4 +18,4 @@ handler.before = async function (m) {
    }
     }
 
-export default handler
+export default handler*/
