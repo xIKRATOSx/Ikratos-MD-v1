@@ -76,6 +76,7 @@ global.lolkeysapi = ['BrunoSobrino']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.lolkey = 'apikeymu'
 global.xkey = 'APIKEYMU'
+global.cricket_URL = 'https://m.cricbuzz.com/live-cricket-scores/56782/pak-vs-nz-new-zealand-tour-of-pakistan-2023'
 /*============== API ==============*/
 global.APIs = { // API Prefix
   // name: 'https://website'
