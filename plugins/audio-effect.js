@@ -22,7 +22,7 @@ if (/tupai|squirrel|chipmunk/.test(command)) set = '-filter:a "atempo=0.5,asetra
 if (/audio/.test(mime)) {
 let ran = getRandom('.mp3')
 let filename = join(__dirname, '../tmp/' + ran)
-let media = await q.download(true)
+let media = await conn.downloadAndSaveMediaMessage(q)
 exec(`ffmpeg -i ${media} ${set} ${filename}`, async (err, stderr, stdout) => {
 await unlinkSync(media)
 if (err) throw `_*Error!*_`
