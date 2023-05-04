@@ -4,7 +4,7 @@ import { exec } from 'child_process'
 
 let handler = async (m, { conn, args, __dirname, usedPrefix, command }) => {
 try {
-let q = m.quoted ? m.quoted : m
+let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
 let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
 let set
 if (/bass/.test(command)) set = '-af equalizer=f=94:width_type=o:width=2:g=30'
