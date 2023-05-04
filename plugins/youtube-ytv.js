@@ -52,7 +52,7 @@ const handler = async (m, { conn, args, command }) => {
 }
 
 handler.command = /^(getvid|ytmp4|youtubemp4|ytv)$/i
-handler.help = ["getvid <linkYt>","ytmp4 <linkYT>", "Download YouTube video."]
+handler.help = ["getvid <linkYt>","ytmp4 <linkYT>"]
 handler.tags = ['downloader']
 
 export default handler
