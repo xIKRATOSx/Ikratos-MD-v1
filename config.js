@@ -69,14 +69,14 @@ global.owner = [
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
-global.prems = ['923470027813','68673045381','923191089077'] // Premium user is not here to add it, type .addprem @ user 10
+global.prems = [] // Premium user is not here to add it, type .addprem @ user 10
 
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.lolkeysapi = ['BrunoSobrino']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.lolkey = 'apikeymu'
 global.xkey = 'APIKEYMU'
-global.cricket_URL = 'https://m.cricbuzz.com/live-cricket-scores/56782/pak-vs-nz-new-zealand-tour-of-pakistan-2023'
+global.cricket_URL = 'https://m.cricbuzz.com/live-cricket-scores/56782/pak-vs-nz-new-zealand-tour-of-pakistan-2023' //paste new live match url here
 /*============== API ==============*/
 global.APIs = { // API Prefix
   // name: 'https://website'
