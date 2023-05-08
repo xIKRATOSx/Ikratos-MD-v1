@@ -21,7 +21,7 @@ if (!isBotAdmin) return m.reply('*I\'ll save you baby, I\'m not an admin I can\'
 if (isBotAdmin) {
 await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet }})
 await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
-} else if (!bot.restrict) return m.reply('*the owner of the bot does not have the restriction activated (enable restrict) contact him to enable them*')
+} else if (!bot.restrict) return m.reply('*the owner of the bot have activated the restriction,Use command (disable restrict) or contact him to disable them*')
 }
 return !0
 }
