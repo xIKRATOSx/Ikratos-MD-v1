@@ -38,6 +38,7 @@ const handler = async (m, { conn, args, command }) => {
   }
 
   if (dlUrl) {
+    await	m.react('🎥')
     await m.reply(`YouTube video download request. Processing, please be patient...`)
 
     await conn.sendMessage(m.chat, { video: { url: dlUrl, caption: title, ...thumb } }, { quoted: m })

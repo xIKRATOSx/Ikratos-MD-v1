@@ -59,9 +59,10 @@ try {
 ⌚ *Duration:* ${durationH}
 👀 *Views:* ${viewH}
   `
+  await	m.react('▶️') 
   await conn.sendButton(m.chat, whmodsdev, wm, botdate, [
-    ['🎶 Audio', `${usedPrefix}yta ${url} yes`],
-    ['🎥 Video', `${usedPrefix}ytv ${url} yes`],
+    ['🎶 Audio', `${usedPrefix}opta ${url} yes`],
+    ['🎥 Video', `${usedPrefix}optv ${url} yes`],
     ['🔎 Youtube Search', `${usedPrefix}yts ${text}`]
 ], m, fdoc)
 } catch { try {
@@ -116,6 +117,7 @@ if (!text) throw `Use example ${usedPrefix}${command} arcade`
 👀 *Views:* ${viewH}
   `
   let buttons = [{ buttonText: { displayText: '🎶 Audio' }, buttonId: `${usedPrefix}opta ${url}` }, { buttonText: { displayText: '🎥 Video' }, buttonId: `${usedPrefix}optv ${url}` }]
+  await m.react('▶️')
   let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: capt, footer: 'Follow me on instagram:\n\tinstagram.com/itx_ahmad.ali', buttons }, { quoted: m })
   // if (durationS > 4000) return conn.sendMessage(m.chat, { text: `*Download:* ${await shortUrl(ytLink)}\n\n_Duration too long..._` }, { quoted: msg })
      }

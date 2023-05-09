@@ -14,6 +14,7 @@ var handler = async (m, { conn, args }) => {
   const ttl = await yt.title
   const size = await yt.audio[q].fileSizeH
 
+await	m.react('🎶')
   await m.reply('YouTube audio/mp3 download requests are being processed, please be patient...')
 
   // Tampilkan informasi file beserta thumbnail

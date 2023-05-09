@@ -1,4 +1,5 @@
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
+try{  
 	const sections = [
    {
 	title: `${dmenub} List Options`,
@@ -297,13 +298,21 @@ const listMessage = {
       if (!/[01]/.test(command)) return conn.sendMessage(m.chat, listMessage, fakes)
       throw false
   }
+  m.reply(`╭┄〔 *OPTIONS* 〕┄⊱
+┆🗂️ Option: ${type} 
+┆——————«•»——————
+┆🎚️ Options: ${isEnable ? 'Enable' : 'Disable'}
+┆——————«•»——————
+┆📣 For: ${isAll ? 'All Bot' : isUser ? '' : 'This Chat'} 
+╰━━━⊰ ${wm} ⊱━━━━დ`)
+} catch (e) {
   conn.send2ButtonDoc(m.chat, `*${htki} OPTIONS ${htka}*
-🗂️ *Type:* ${type} 
+🗂️ *Option:* ${type} 
 📊 *Status:* Succes ✅
 🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
-📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}
+📣 *For:* ${isAll ? 'All Bot' : isUser ? '' : 'This Chat'}
 `, wm, `${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`, '🎀 Menu', '.menu', fakes, adReply)
-}
+}}
 handler.help = ['enable', 'disable'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i

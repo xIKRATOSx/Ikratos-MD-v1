@@ -16,6 +16,7 @@ let name = await conn.getName(m.sender)
 try {
   if (!text) throw `Where is the text?\nExample; *${usedPrefix + command}* arcade`
   await conn.reply(m.chat, global.wait, m)
+  await	m.react('🔀')
   let ikratosytr = await yts(text)
   let depat = ikratosytr.all
   let listSections2 = []
@@ -36,6 +37,7 @@ try {
          ['Audio 🎧', usedPrefix + 'ytmp3 ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
         ]])
  })
+ await	m.react('🔀')
  return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nɪᴋʀᴀᴛᴏs-ᴍᴅ-ᴠ1 • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +92 347 0027813`, `${fig}`, `YouTube Search 🔎`, listSections, m)
  } }
 handler.help = ['ytsearch <query>']

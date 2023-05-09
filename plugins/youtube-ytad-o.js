@@ -8,7 +8,7 @@ let handler = async (m, { conn, groupMetadata, usedPrefix, text, args, command }
 \t${fig}
 `
 let buttons = [{ buttonText: { displayText: 'Audio' }, buttonId: `${usedPrefix}yta ${text} ` }, { buttonText: { displayText: 'Document' }, buttonId: `${usedPrefix}adoc ${text} ` }]
-							 
+await m.react('🔁')						 
 let msg = await conn.sendMessage(m.chat, { image: { url: 'https://i.ibb.co/cc8jfkX/01.jpg' }, caption: capt, footer: `${footerTXT}`, buttons }, { quoted: m })
 }
 
