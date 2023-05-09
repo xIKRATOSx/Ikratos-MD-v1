@@ -298,6 +298,7 @@ const listMessage = {
       if (!/[01]/.test(command)) return conn.sendMessage(m.chat, listMessage, fakes)
       throw false
   }
+await m.react('✅')  
   m.reply(`╭┄〔 *OPTIONS* 〕┄⊱
 ┆🗂️ Option: ${type} 
 ┆——————«•»——————
@@ -308,7 +309,7 @@ const listMessage = {
 } catch (e) {
   conn.send2ButtonDoc(m.chat, `*${htki} OPTIONS ${htka}*
 🗂️ *Option:* ${type} 
-📊 *Status:* Succes ✅
+📊 *Status:* Success ✅
 🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
 📣 *For:* ${isAll ? 'All Bot' : isUser ? '' : 'This Chat'}
 `, wm, `${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`, '🎀 Menu', '.menu', fakes, adReply)
