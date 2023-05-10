@@ -3,9 +3,6 @@
     <a href="https://ibb.co/N6NMDtn"><img src="https://i.ibb.co/cc8jfkX/01.jpg" alt="01" border="0" /></a>
 </p>
 
-## PENTING
-
-> **Warning**: Don't Trade This Script
 
 <h1 align="center">Ikratos-MD-v1</h1>
 <p align="center">
@@ -27,26 +24,14 @@
   <a href="mailto:bmclips001@gmail.com">
     <img align="left" alt="SIEGRIN | Gmail" width="26px" src="https://github.com/siegrin/siegrin/blob/main/Assets/Gmail.svg" />
   </a> &nbsp;&nbsp;
----------
 
-[![BOT WHATSAPP](https://img.shields.io/badge/WhatsApp%20BOT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/923470027813) 
----------
-
-### a little about this bot
-- ✔️ | **Simple** 
-- ✔️ | **Button Template** 
-- ✔️ | **Multi Device** 
-- ✔️ | **Button Document(Experiment)** 
----------
-
-## ``Group Panelku Hosting``
-[![WHATSAPP](https://img.shields.io/badge/Groups%20Panel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/DxIb5oWzpg24mmg9D9zw5Y) 
+## ``Group Hosting Bot``
+[![WHATSAPP](https://img.shields.io/badge/Groups%20Panel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/KQQFlKV0B2ZHAy9OYaqrZi) 
 ---------
 
 ## ```HEROKU DEPLOYMENT```
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/xIKRATOSx/Ikratos-MD-v1)
----------
 
 ## ```STEPS TO DEPLOY ON HEROKU```
 
@@ -66,7 +51,11 @@
 
 ## ```USER REPLIT```
 [![Run on Repl.it](https://repl.it/badge/github/xIKRATOSx/Ikratos-MD-v1)](https://repl.it/github/xIKRATOSx/Ikratos-MD-v1)
+
+<details>
+<summary>TERMUX DEPLOYMENT</summary>
 ## TERMUX USER
+
 ```bash
 $ pkg upgrade && pkg update
 $ pkg install git -y
@@ -87,9 +76,12 @@ $ node .
 $ pkg install yarn -y
 $ yarn install
 ```
----------
+</details>
 
-## TERMUX WITH UBUNTU
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
+<details>
+<summary>TERMUX WITH UBUNTU</summary>
+
 
 ```bash
 apt update && apt full-upgrade
@@ -121,10 +113,11 @@ cd Ikratos-MD-v1
 npm install
 npm update
 ```
+</details>
 
----------
-
-## FOR WINDOWS/VPS/RDP USER 💻
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
+<details>
+<summary>FOR WINDOWS/VPS/RDP USER 💻</summary>
 
 * Download And Install Git [`Click Here`](https://git-scm.com/downloads)
 * Download And Install NodeJS [`Click Here`](https://nodejs.org/en/download)
@@ -145,8 +138,9 @@ npm update
 ```bash
 node .
 ```
----------
+</details>
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 ## ```How To Customise Message Display```
 ```js
 // Syntax
