@@ -307,12 +307,12 @@ await m.react('✅')
 ┆📣 For: ${isAll ? 'All Bot' : isUser ? '' : 'This Chat'} 
 ╰━━━⊰ ${wm} ⊱━━━━დ`)
 } catch (e) {
-  conn.send2ButtonDoc(m.chat, `*${htki} OPTIONS ${htka}*
-🗂️ *Option:* ${type} 
-📊 *Status:* Success ✅
-🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
-📣 *For:* ${isAll ? 'All Bot' : isUser ? '' : 'This Chat'}
-`, wm, `${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`, '🎀 Menu', '.menu', fakes, adReply)
+  //conn.send2ButtonDoc(m.chat, `*${htki} OPTIONS ${htka}*
+//🗂️ *Option:* ${type} 
+//📊 *Status:* Success ✅
+//🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
+//📣 *For:* ${isAll ? 'All Bot' : isUser ? '' : 'This Chat'}
+//`, wm, `${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`, '🎀 Menu', '.menu', fakes, adReply)
 }}
 handler.help = ['enable', 'disable'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
