@@ -14,6 +14,9 @@
 </p>
 <p align="center">
 <a href="https://github.com/xIKRATOSx"><img title="Author" src="https://img.shields.io/badge/AUTHOR-xIKRATOSx-green.svg?style=for-the-badge&logo=github"></a>
+<h1 align="centre">I'm Archiving This Repo. And I'll Release New Bot Soon</h1>
+
+## Join [WhatsApp-Group](https://chat.whatsapp.com/KQQFlKV0B2ZHAy9OYaqrZi) To Stay Tuned.
 
 ---------
 
