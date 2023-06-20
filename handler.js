@@ -76,7 +76,7 @@ export async function handler(chatUpdate) {
                 if (!('role' in user))
                     user.role = 'Beginner'
                 if (!('autolevelup' in user))
-                    user.autolevelup = true
+                    user.autolevelup = false
                 if (!isNumber(user.money))
                     user.money = 0
                 if (!isNumber(user.atm))
@@ -100,7 +100,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.petFood))
                     user.petFood = 0
                 if (!isNumber(user.emerald))
-                    user.emerald = 0
+                    user.emerald = 1
                 if (!isNumber(user.diamond))
                     user.diamond = 0
                 if (!isNumber(user.gold))
@@ -141,6 +141,8 @@ export async function handler(chatUpdate) {
                     user.robo = 0
                 if (!isNumber(user.roboxp))
                     user.roboxp = 0
+
+
                 if (!isNumber(user.horselastfeed))
                     user.horselastfeed = 0
                 if (!isNumber(user.catlastfeed))
@@ -149,6 +151,8 @@ export async function handler(chatUpdate) {
                     user.foxlastfeed = 0
                 if (!isNumber(user.doglastfeed))
                     user.doglastfeed = 0
+
+
                 if (!isNumber(user.armor))
                     user.armor = 0
                 if (!isNumber(user.armordurability))
@@ -165,6 +169,8 @@ export async function handler(chatUpdate) {
                     user.fishingrod = 0
                 if (!isNumber(user.fishingroddurability))
                     user.fishingroddurability = 0
+
+
                 if (!isNumber(user.lastclaim))
                     user.lastclaim = 0
                 if (!isNumber(user.lastadventure))
@@ -185,6 +191,8 @@ export async function handler(chatUpdate) {
                     user.lastmonthly = 0
                 if (!isNumber(user.lastbunga))
                     user.lastbunga = 0
+                    
+
                 if (!isNumber(user.premium))
                     user.premium = false
                 if (!isNumber(user.premiumTime))
@@ -207,7 +215,7 @@ export async function handler(chatUpdate) {
                     warn: 0,
                     level: 0,                    
                     role: 'Beginner',
-                    autolevelup: true,
+                    autolevelup: false,
                     money: 0,
                     bank: 0,
                     atm: 0,
@@ -218,7 +226,7 @@ export async function handler(chatUpdate) {
                     wood: 0,
                     rock: 0,
                     string: 0,
-                    emerald: 0,
+                    emerald: 1,
                     diamond: 0,
                     gold: 0,
                     iron: 0,
@@ -271,14 +279,12 @@ export async function handler(chatUpdate) {
                     chat.isBanned = false
                 if (!('welcome' in chat))
                     chat.welcome = true
-                if (!('gpt' in chat))
-                    chat.gpt = false  
                 if (!('detect' in chat))
                     chat.detect = false
                 if (!('sWelcome' in chat))
                     chat.sWelcome = ''
                 if (!('sBye' in chat))
-                    chat.sBye = ''   
+                    chat.sBye = ''
                 if (!('sPromote' in chat))
                     chat.sPromote = ''
                 if (!('sDemote' in chat))
@@ -293,25 +299,22 @@ export async function handler(chatUpdate) {
                     chat.antiToxic = false
                 if (!('simi' in chat))
                     chat.simi = false
-                if (!('autoSticker' in chat))
-                    chat.autoSticker = false    
-                if (!('nsfw' in chat))
-                    chat.nsfw = false
+                if (!('autosticker' in chat))
+                    chat.autosticker = false
                 if (!('premium' in chat))
                     chat.premium = false
+                 if (!('onlyenglish' in chat))
+                    chat.onlyLatinos = false
                 if (!('premiumTime' in chat)) 
                     chat.premiumTime = false
                 if (!('premnsfw' in chat))
                     chat.premnsfw = false
-                if (!('autochat' in chat))
-                    chat.autochat = false  
                 if (!isNumber(chat.expired))
                     chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: true,
-                    gpt: false,
                     detect: false,
                     sWelcome: '',
                     sBye: '',
@@ -323,12 +326,11 @@ export async function handler(chatUpdate) {
                     antiToxic: true,
                     simi: false,
                     expired: 0,
-                    autoSticker: false,
-                    nsfw: false,
+                    onlyenglish: false,
+                    autosticker: false,
                     premium: false,
 	            premiumTime: false,
-                    premnsfw: false,
-                    autochat: false, 
+                    premnsfw: false, 
                 }
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
@@ -535,15 +537,15 @@ export async function handler(chatUpdate) {
                 m.isCommand = true
                 let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
                 if (xp > 200)
-                    m.reply('Ngecit -_-') // Hehehe
+                    m.reply('chirrido -_-') // Hehehe
                 else
                     m.exp += xp
-                if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 0) {
-                    this.reply(m.chat, `[❗] Your daily limit has run out, please buy through *${usedPrefix}buy limit*`, m)
+                if (!isPrems && plugin.diamond && global.db.data.users[m.sender].diamond < plugin.diamond * 1) {
+                     this.reply(m.chat, `✳️ your diamonds ran out \n use the following command to buy more diamonds \n*${usedPrefix}todiamond* <amount`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
-                    this.reply(m.chat, `[💬] ${plugin.level} level required to use this command\n*Your level:* ${_user.level} 📊`, m)
+                    this.reply(m.chat, `✳️ required level ${plugin.level} to use this command. \nyour level ${_user.level}`, m)
                     continue // If the level has not been reached
                 }
                 let extra = {
@@ -572,7 +574,7 @@ export async function handler(chatUpdate) {
                 try {
                     await plugin.call(this, m, extra)
                     if (!isPrems)
-                        m.limit = m.limit || plugin.limit || false
+                        m.diamond = m.diamond || plugin.diamond || false
                 } catch (e) {
                     // Error occured
                     m.error = e
@@ -598,8 +600,8 @@ export async function handler(chatUpdate) {
                             console.error(e)
                         }
                     }
-                    if (m.limit)
-                        m.reply(+m.limit + ' your limit is used ✔️')
+                    if (m.diamond)
+                        m.reply(`consumed *${+m.diamond}* 💎`)
                 }
                 break
             }
@@ -676,63 +678,54 @@ export async function participantsUpdate({ id, participants, action }) {
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
-                    let nickgc = await conn.getName(id)
-                    let pp = 'https://telegra.ph/file/24fa902ead26340f3df2c.png'
-                    let ppgc = 'https://telegra.ph/file/24fa902ead26340f3df2c.png'
+                    let pp = 'https://i.imgur.com/8B4jwGq.jpeg'
+                    let ppgp = 'https://i.imgur.com/8B4jwGq.jpeg'
                     try {
                         pp = await this.profilePictureUrl(user, 'image')
-                        ppgc = await this.profilePictureUrl(id, 'image') 
-                    } catch (e) {
-                    } finally {
-                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
-                            (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', `${this.getName(user)}`)
-                            let text2 = (action === 'add' ? wel : lea)
-                            let wel = await new knights.Welcome2()
-                 .setAvatar(pp)
-                 .setUsername(this.getName(user)) 
-                 .setBg("https://telegra.ph/file/0b814069d86ee9a022da5.jpg")
-                 .setGroupname(groupMetadata.subject) 
-                 .setMember(groupMetadata.participants.length)
-                 .toAttachment()
-                 
-              let lea = await new knights.Goodbye()
-                .setUsername(this.getName(user))
-                .setGuildName(groupMetadata.subject)
-                .setGuildIcon(ppgc)
-                .setMemberCount(groupMetadata.participants.length)
-                .setAvatar(pp)
-                .setBackground("https://telegra.ph/file/0db212539fe8a014017e3.jpg")
-                .toAttachment()
-                            
-                         this.sendFile(id, text2, pp, 'pp.jpg', text, null, false, { mentions: [user] })
-                       /*await this.sendHydrated(id, global.ucapan, text, action === 'add' ? wel.toBuffer() : lea.toBuffer(), sgc, (action == 'add' ? '💌 WELCOME' : '🐾 BYE'), user.split`@`[0], 'ɴᴜᴍʙᴇʀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ', [
-      [action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'bilek']], null, fkontak, { mentions: [user] })*/
-      /*await conn.sendButtonImg(id, action === 'add' ? wel : lea, action == 'add' ? 'Welcome To ' + nickgc : 'Goodbye From' + nickgc, text, 'Menu', '.menu', fkontak, { contextInfo: { externalAdReply: { showAdAttribution: true,
-        mediaUrl: global.sig,
-        mediaType: 2, 
-        description: global.sig, 
-        title: '',
-        body: wm,
-        thumbnail: await(await fetch(thumb)).buffer(),
-        sourceUrl: sig
-         }}
-      })*/
+                        ppgp = await this.profilePictureUrl(id, 'image')
+                        } finally {
+                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user').replace('@group', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'Desconocido') :
+                            (chat.sBye || this.bye || conn.bye || 'HELLO, @user')).replace('@user', '@' + user.split('@')[0])
+                         
+                            let wel = API('fgmods', '/api/welcome', {
+                                username: await this.getName(user),
+                                groupname: await this.getName(id),
+                                groupicon: ppgp,
+                                membercount: groupMetadata.participants.length,
+                                profile: pp,
+                                background: 'https://i.imgur.com/bbWbASn.jpg'
+                            }, 'apikey')
+
+                            let lea = API('fgmods', '/api/goodbye', {
+                                username: await this.getName(user),
+                                groupname: await this.getName(id),
+                                groupicon: ppgp,
+                                membercount: groupMetadata.participants.length,
+                                profile: pp,
+                                background: 'https://i.imgur.com/klTSO3d.jpg'
+                            }, 'apikey')
+                             this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
+                            /*this.sendButton(id, text, igfg, action === 'add' ? wel : lea, [
+                             [(action == 'add' ? '⦙☰ MENU' : 'BYE'), (action == 'add' ? '/help' : '')], 
+                             [(action == 'add' ? '⏍ INFO' : 'ッ'), (action == 'add' ? '/info' : ' ')] ], null, {mentions: [user]})
+                          */
                     }
                 }
             }
             break
         case 'promote':
-            text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+        case 'promover':
+            text = (chat.sPromote || this.spromote || conn.spromote || '@user is now administrador')
         case 'demote':
+        case 'degradar':
             if (!text)
-                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user not now an administrador')
             text = text.replace('@user', '@' + participants[0].split('@')[0])
             if (chat.detect)
                 this.sendMessage(id, { text, mentions: this.parseMention(text) })
             break
     }
 }
-
 /**
  * Handler groups update
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['groups.update']} groupsUpdate 
@@ -754,7 +747,7 @@ export async function groupsUpdate(groupsUpdate) {
         if (groupUpdate.restrict == true) text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || '*Group has been all participants!*')
         if (groupUpdate.restrict == false) text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || '*Group has been only admin!*')
         if (!text) continue
-         this.send2ButtonDoc(id, text.trim(), author, '🔖 Ahmad Ali', '.off detect', '🎀 Menu', '.menu', fakes, adReply)
+        await this.sendMessage(id, { text, mentions: this.parseMention(text) })
     }
 }
 
@@ -769,13 +762,17 @@ export async function deleteUpdate(message) {
         let chat = global.db.data.chats[msg.chat] || {}
         if (chat.delete)
             return 
-            this.send2ButtonDoc(msg.chat, `
-Terdeteksi @${participant.split`@`[0]} telah menghapus pesan. 
-Untuk mematikan fitur ini, ketik
+            await this.reply(msg.chat, `
+≡ deleted a message 
+┌─⊷  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀 
+▢ *Number :* @${participant.split`@`[0]} 
+└─────────────
+TO DEACTIVE , PRESS 
+*/off antidelete*
 *.enable delete*
-          
-Untuk menghapus pesan yang dikirim oleh Bot, reply pesan dengan perintah
-*.delete*`, author, '🔖 Ahmad Ali', '.on delete', '🎀 Menu', '.menu', msg, adReply)
+`.trim(), msg, {
+            mentions: [participant]
+        })
         this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
         console.error(e)
@@ -784,16 +781,16 @@ Untuk menghapus pesan yang dikirim oleh Bot, reply pesan dengan perintah
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: '*ᴏɴʟʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ʙʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ',
-        owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • ᴄᴏᴍᴍᴀɴᴅᴄᴀɴ ʙᴇ ᴜsᴇᴅ ʙʏ ᴏᴡɴᴇʀ ʙᴏᴛ',
-        mods: '*ᴏɴʟʏ ᴍᴏᴅᴇʀᴀᴛᴏʀ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ʙʏ ᴍᴏᴅᴇʀᴀᴛᴏʀ ʙᴏᴛ',
-        premium: '*ᴏɴʟʏ ᴘʀᴇᴍɪᴜᴍ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ʙʏ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀ',
-        group: '*ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ɪɴ ɢʀᴏᴜᴘ',
-        private: '*ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ɪɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ',
-        admin: '*ᴏɴʟʏ ᴀᴅᴍɪɴ* • ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ʙʏ ᴀᴅᴍɪɴ ɢʀᴏᴜᴘ',
-        botAdmin: '*ᴏɴʟʏ ʙᴏᴛ ᴀᴅᴍɪɴ* • ʙᴏᴛ ɴᴇᴇᴅs ᴛᴏ ʙᴇ ᴀᴅᴍɪɴ ғɪʀsᴛ',
-        unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ ʏᴇᴛ* • ᴛʏᴘᴇ  .daftar ᴛᴏ ʙᴇ ᴀʙʟᴇ ᴛᴏ ᴜsᴇ ғᴇᴀᴛᴜʀᴇs', 
-        restrict: '*ʀᴇsᴛʀɪᴄᴛ* • ʀᴇsᴛʀɪᴄᴛ ɴᴏᴛ ᴛᴜʀɴᴇᴅ ᴏɴ ɪɴ ᴛʜɪs ᴄʜᴀᴛ',
+        rowner: '*ᴏɴʟʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* • This command can only be used by the *Creator of the bot*',
+        owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • This command can only be used by the *Bot Owner',
+        mods: '*ᴏɴʟʏ ᴍᴏᴅᴇʀᴀᴛᴏʀ* •This function is only for *For Bot moderators*',
+        premium: '*ᴏɴʟʏ ᴘʀᴇᴍɪᴜᴍ* • This command is for *Premium members only',
+        group: '*ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • This command can only be used in groups',
+        private: '*ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • This command can only be used in the *private chat of the Bot*',
+        admin: '*ᴏɴʟʏ ᴀᴅᴍɪɴ* • This command is only for *Group Admins*',
+        botAdmin: '*ᴏɴʟʏ ʙᴏᴛ ᴀᴅᴍɪɴ* • To use this command I must be *Admin!*',
+        unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ ʏᴇᴛ* •  Sign in to use this feature Type:\n\n*/reg name.age*\n\n📌Example : */reg xIKRATOSx.20*', 
+        restrict: '*ʀᴇsᴛʀɪᴄᴛ* • This feature is *disabled*',
     }[type]
     if (msg) return m.reply(msg)
 }
