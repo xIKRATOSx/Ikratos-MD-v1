@@ -1,6 +1,7 @@
-import { youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
+import { youtubedlv2, youtubedlv3, youtubedl } from '@bochilteam/scraper'
 
 const handler = async (m, { conn, args, command }) => {
+  if (!args[0]) throw 'Where`s Url?'
   const v = args[0]
 
   const resolutions = ["144p", "240p", "360p", "480p", "720p", "1080p"]
@@ -15,9 +16,9 @@ const handler = async (m, { conn, args, command }) => {
 
   let yt
   try {
-    yt = await youtubedlv2(v)
+    yt = await youtubedl(v)
   } catch {
-    yt = await youtubedlv3(v)
+    yt = await youtubedlv2(v)
   }
 
   const title = await yt.title
@@ -46,13 +47,13 @@ const handler = async (m, { conn, args, command }) => {
     await m.reply(`▢ Title: ${title}
 ▢ Resolution: ${selectedResolution}
 ▢ Size: ${size}
-▢ The video has been successfully downloaded!`)
+▢ The video has been successfully downloaded!\n\n${fig}`)
   } else {
     await m.reply(`Sorry, the video is not available for download.`)
   }
 }
 
-handler.command = /^(getvid|ytmp4|youtubemp4|ytv)$/i
+handler.command = /^(getvid|ytmp4|youtubemp4|ytv|video)$/i
 handler.help = ["getvid <linkYt>","ytmp4 <linkYT>"]
 handler.tags = ['downloader']
 
