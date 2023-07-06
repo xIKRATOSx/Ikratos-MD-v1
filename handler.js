@@ -704,7 +704,8 @@ export async function participantsUpdate({ id, participants, action }) {
                 .setBackground("https://telegra.ph/file/0db212539fe8a014017e3.jpg")
                 .toAttachment()
                             
-                         this.sendFile(id, text2, pp, 'pp.jpg', text, null, false, { mentions: [user] })
+                this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
+                         //this.sendFile(id, text2, pp, 'pp.jpg', text, null, false, { mentions: [user] })
                        /*await this.sendHydrated(id, global.ucapan, text, action === 'add' ? wel.toBuffer() : lea.toBuffer(), sgc, (action == 'add' ? '💌 WELCOME' : '🐾 BYE'), user.split`@`[0], 'ɴᴜᴍʙᴇʀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ', [
       [action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'bilek']], null, fkontak, { mentions: [user] })*/
       /*await conn.sendButtonImg(id, action === 'add' ? wel : lea, action == 'add' ? 'Welcome To ' + nickgc : 'Goodbye From' + nickgc, text, 'Menu', '.menu', fkontak, { contextInfo: { externalAdReply: { showAdAttribution: true,
@@ -754,7 +755,8 @@ export async function groupsUpdate(groupsUpdate) {
         if (groupUpdate.restrict == true) text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || '*Group has been all participants!*')
         if (groupUpdate.restrict == false) text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || '*Group has been only admin!*')
         if (!text) continue
-         this.send2ButtonDoc(id, text.trim(), author, '🔖 Ahmad Ali', '.off detect', '🎀 Menu', '.menu', fakes, adReply)
+        this.reply(id, text.trim(), fakes)
+        //this.send2ButtonDoc(id, text.trim(), author, '🔖 Ahmad Ali', '.off detect', '🎀 Menu', '.menu', fakes, adReply)
     }
 }
 
@@ -769,13 +771,13 @@ export async function deleteUpdate(message) {
         let chat = global.db.data.chats[msg.chat] || {}
         if (chat.delete)
             return 
-            this.send2ButtonDoc(msg.chat, `
-Terdeteksi @${participant.split`@`[0]} telah menghapus pesan. 
-Untuk mematikan fitur ini, ketik
-*.enable delete*
-          
-Untuk menghapus pesan yang dikirim oleh Bot, reply pesan dengan perintah
-*.delete*`, author, '🔖 Ahmad Ali', '.on delete', '🎀 Menu', '.menu', msg, adReply)
+            this.reply(`
+Detected @${participant.split`@`[0]} has deleted the message.
+To turn this feature off, type
+*.off delete*
+                      
+To delete messages sent by bots, reply to messages with commands
+*.delete*`, msg)
         this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
         console.error(e)

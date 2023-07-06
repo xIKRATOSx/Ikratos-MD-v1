@@ -1,22 +1,18 @@
-import fetch from 'node-fetch'
+import { groupWA } from '@bochilteam/scraper'
 let handler = async (m, { text, usedPrefix, command }) => {
-    if (!text) throw `uhm.. what are you looking for?\n\nexample:\n${usedPrefix + command} mabar`
+        if (!text) throw `uhm.. what are you looking for?\n\nexample:\n${usedPrefix + command} mabar`
+        let res = await groupWA(text)
+        if (!res) throw 'Group Tidak Ditemukan'
+        var pik = pickRandom(res) 
+        var { subject, url } = pik
+        let caption = `
+    *Nama* : ${subject}
+    *Link :* ${url}
+    `
+            return m.reply(caption)
     
-    let json = await fetch(`https://anabotofc.herokuapp.com/api/carigrup?apikey=AnaBot&query=${text}`)
-        let jsons = await json.json()
-        let caption = `*⎔┉━「 ${command} 」━┉⎔*`
-        for (let x of jsons.result) {
-        caption += `
-*Name* : ${x.title}
-*Link :* ${x.link}
-*Desc :* ${x.desc}
-`}
-        return m.reply(caption)
-        
-}
-handler.help = ['carigrup <pencarian>']
-handler.tags = ['tools']
-
-handler.command = /^carig(ro?up|c)/i
-
-export default handler
+    }
+    handler.help = ['carigrup <pencarian>']
+    handler.tags = ['tools']
+    handler.command = /^carig(ro?up|c)/i
+    export default handler

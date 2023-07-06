@@ -1,6 +1,6 @@
 // Update by Xnuvers007
 
-import axios from 'axios'
+/*import axios from 'axios'
 var handler = async (m, { conn, command, text, usedPrefix }) => {
     if (!text) throw `Use example\n${usedPrefix}${command} https://www.facebook.com/100010929794713/posts/1885825845125057/`
     const req = await igeh(text)
@@ -68,4 +68,4 @@ async function igeh(url_media){
             reject(e.message)
         }
     })
-}
+}*/
