@@ -4,7 +4,7 @@ let app = global.app = express()
 
 function connect(PORT) {
 	
-	app.get('/', (req, res) => res.send('Halo Lort'))
+	app.get('/', (req, res) => res.send('Whatsapp Bot By Ahmad Ali (xIKRATOSx)\n\t\t\tVisit this Site\nikratos-md-web.xikratosx.repl.co'))
 	
 	app.get('/nowa', async (req, res) => {
 		let q = req.query.number, regex = /x/g
