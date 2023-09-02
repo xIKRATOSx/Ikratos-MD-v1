@@ -1,7 +1,7 @@
 // - - THANKS TO - -
 // • Allah SWT
 // • Nurutomo
-// • Bochilgaming
+// • Bochilgamin
 // • Rominaru
 // • Kannachann
 // • FahriAdison
